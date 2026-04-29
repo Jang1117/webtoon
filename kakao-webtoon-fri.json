@@ -1,0 +1,1515 @@
+{
+  "kakao": {
+    "mon": [],
+    "tue": [],
+    "wed": [],
+    "thu": [],
+    "fri": [
+      {
+        "title": "No 재민 Zone",
+        "url": "https://webtoon.kakao.com/content/No-재민-Zone/4728",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4728/c1/2x/7f7d5014-db11-4110-8446-70730cc421c2.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4728"
+      },
+      {
+        "title": "연하는 욕구불만",
+        "url": "https://webtoon.kakao.com/content/연하는-욕구불만/3799",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3799/c2/2x/dd2f33ec-6523-4caa-9041-e47a63766d0d.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3799"
+      },
+      {
+        "title": "폭군 오빠는 덤입니다",
+        "url": "https://webtoon.kakao.com/content/폭군-오빠는-덤입니다/4825",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4825/c2/2x/72e2b586-32ef-4035-8152-08df4d4d2688.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4825"
+      },
+      {
+        "title": "퀴퀴한 일기",
+        "url": "https://webtoon.kakao.com/content/퀴퀴한-일기/1295",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/1295/c2/2x/b2e2d7a6-abc1-4091-9521-2de46af6c0a6.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "1295"
+      },
+      {
+        "title": "냉혈",
+        "url": "https://webtoon.kakao.com/content/냉혈/3929",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3929/c2/2x/1c4ed630-8ecc-4ded-a8fe-e5bf24154767.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3929"
+      },
+      {
+        "title": "여자인 걸 왜 모르지",
+        "url": "https://webtoon.kakao.com/content/여자인-걸-왜-모르지/3185",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3185/c2/2x/3357fbb9-f14b-4942-9bdb-bd4f49a4ee2d.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3185"
+      },
+      {
+        "title": "나 혼자 EX급 소환수",
+        "url": "https://webtoon.kakao.com/content/나-혼자-EX급-소환수/4828",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4828/c2/2x/6ceab047-e11b-47ce-879c-2f8c7c69bd67.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4828"
+      },
+      {
+        "title": "숨은 신록 끝에서 19세 완전판",
+        "url": "https://webtoon.kakao.com/content/숨은-신록-끝에서-19세-완전판/4232",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4232/c2/2x/44f12198-86e3-47d2-91ed-f3f41d691d95.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4232"
+      },
+      {
+        "title": "미완결",
+        "url": "https://webtoon.kakao.com/content/미완결/1882",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/1882/c2/2x/544abc05-93c9-438c-9678-4f24d7f963cf.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "1882"
+      },
+      {
+        "title": "두 번 사는 랭커",
+        "url": "https://webtoon.kakao.com/content/두-번-사는-랭커/2335",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2335/c2/2x/04d40fc7-3e74-4b3a-8316-d73524a26055.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2335"
+      },
+      {
+        "title": "연민은 사절이라",
+        "url": "https://webtoon.kakao.com/content/연민은-사절이라/4722",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4722/c2/2x/50e352a5-3d97-4be2-ac15-588be30f6d6b.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4722"
+      },
+      {
+        "title": "야구의 정치",
+        "url": "https://webtoon.kakao.com/content/야구의-정치/4633",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4633/c2/2x/8ed3c0aa-bfbe-4ffa-a72b-7e7f9b0e4d10.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4633"
+      },
+      {
+        "title": "악역의 엔딩은 죽음뿐",
+        "url": "https://webtoon.kakao.com/content/악역의-엔딩은-죽음뿐/2383",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2383/c2/2x/9ce1536d-bc64-4789-8ad0-97485414e814.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2383"
+      },
+      {
+        "title": "이제 울어도 될까요",
+        "url": "https://webtoon.kakao.com/content/이제-울어도-될까요/4718",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4718/c2/2x/46f06e0a-04be-4355-9adf-662d2b6192b1.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4718"
+      },
+      {
+        "title": "남주가 제 건강에 집착합니다",
+        "url": "https://webtoon.kakao.com/content/남주가-제-건강에-집착합니다/4548",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4548/c2/2x/7618d3fb-3dcc-408b-bf47-9ea99dccfabc.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4548"
+      },
+      {
+        "title": "환생표사",
+        "url": "https://webtoon.kakao.com/content/환생표사/3946",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3946/c2/2x/f935395d-2cfb-48fe-925c-171932384fe1.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3946"
+      },
+      {
+        "title": "얼굴천재 0살 톱스타",
+        "url": "https://webtoon.kakao.com/content/얼굴천재-0살-톱스타/4610",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4610/c2/2x/628ead7a-bdb1-4a86-8eaa-88e39b351755.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4610"
+      },
+      {
+        "title": "원작은 모르겠고 먹고 살기도 바쁩니다",
+        "url": "https://webtoon.kakao.com/content/원작은-모르겠고-먹고-살기도-바쁩니다/4334",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4334/c2/2x/d51684f7-378d-43e7-b23c-41f494c15333.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4334"
+      },
+      {
+        "title": "아빠 저는 아무것도 하지 않을게요",
+        "url": "https://webtoon.kakao.com/content/아빠-저는-아무것도-하지-않을게요/4391",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4391/c2/2x/0dabd7b1-5eb2-4068-92e1-1f22325d202b.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4391"
+      },
+      {
+        "title": "피어나는 유교",
+        "url": "https://webtoon.kakao.com/content/피어나는-유교/4754",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4754/c2/2x/420ba96e-a0b5-4e93-8431-f64ef075fd76.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4754"
+      },
+      {
+        "title": "시한부를 즐겼을 뿐이었는데",
+        "url": "https://webtoon.kakao.com/content/시한부를-즐겼을-뿐이었는데/4101",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4101/c2/2x/791156c0-73bf-4df1-ac04-31eb30b83ccc.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4101"
+      },
+      {
+        "title": "불청객과 춤을",
+        "url": "https://webtoon.kakao.com/content/불청객과-춤을/2970",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2970/c2/2x/df3810a7-a1bd-4b6b-9f79-b1b9df0de323.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2970"
+      },
+      {
+        "title": "이 결혼은 어차피 망하게 되어 있다 19세 완전판",
+        "url": "https://webtoon.kakao.com/content/이-결혼은-어차피-망하게-되어-있다-19세-완전판/3618",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3618/c2/2x/7cd896b6-47e0-4572-a1e8-91d438f6768f.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3618"
+      },
+      {
+        "title": "양호실 침대 쟁탈전",
+        "url": "https://webtoon.kakao.com/content/양호실-침대-쟁탈전/4723",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4723/c2/2x/65ebfa00-b87a-40ce-ae20-7eeb316d3596.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4723"
+      },
+      {
+        "title": "장녀는 꽃길을 걷는다",
+        "url": "https://webtoon.kakao.com/content/장녀는-꽃길을-걷는다/4821",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4821/c2/2x/78bbaa4c-2b56-4fe2-9b88-ff47919c97c8.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4821"
+      },
+      {
+        "title": "비뢰도",
+        "url": "https://webtoon.kakao.com/content/비뢰도/2355",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2355/c2/2x/ea9472e1-59bc-47d7-8085-43ad69b674a3.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2355"
+      },
+      {
+        "title": "내가 죽은 뒤 꼬마 신랑은",
+        "url": "https://webtoon.kakao.com/content/내가-죽은-뒤-꼬마-신랑은/4689",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4689/c2/2x/8b05f268-7ac9-449a-9518-64872157ea6b.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4689"
+      },
+      {
+        "title": "환생한 암살자는 검술 천재",
+        "url": "https://webtoon.kakao.com/content/환생한-암살자는-검술-천재/3687",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3687/c2/2x/09ad896c-0ad4-41df-a8e8-09578a166272.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3687"
+      },
+      {
+        "title": "시녀의 유혹",
+        "url": "https://webtoon.kakao.com/content/시녀의-유혹/4679",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4679/c2/2x/372df5f4-9031-4f77-9c52-aace58f4ed9d.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4679"
+      },
+      {
+        "title": "백작가의 망나니가 되었다",
+        "url": "https://webtoon.kakao.com/content/백작가의-망나니가-되었다/2414",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2414/c2/2x/5baba0dd-3095-4843-814a-0e09b5ce5111.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2414"
+      },
+      {
+        "title": "카스트라토 ~거세 가수 이야기~",
+        "url": "https://webtoon.kakao.com/content/카스트라토-~거세-가수-이야기~/4701",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4701/c2/2x/8099a47a-5400-4c3d-aac4-9c8ec60af5aa.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4701"
+      },
+      {
+        "title": "피폐 남주를 주먹으로 길들였다 19세 완전판",
+        "url": "https://webtoon.kakao.com/content/피폐-남주를-주먹으로-길들였다-19세-완전판/4366",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4366/c2/2x/e75fcd36-1644-43eb-bd23-6d1aa09583b2.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4366"
+      },
+      {
+        "title": "나쁜 시녀들",
+        "url": "https://webtoon.kakao.com/content/나쁜-시녀들/4048",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4048/c2/2x/d2dd914f-45c6-4972-a808-9fd804f24953.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4048"
+      },
+      {
+        "title": "SSS급 죽어야 사는 헌터",
+        "url": "https://webtoon.kakao.com/content/SSS급-죽어야-사는-헌터/2454",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2454/c2/2x/0d788ea8-6fcd-4ef8-99f5-726cd7f07215.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2454"
+      },
+      {
+        "title": "홈 플레이트의 빌런",
+        "url": "https://webtoon.kakao.com/content/홈-플레이트의-빌런/3287",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3287/c2/2x/ee8010da-2a40-4dc0-a707-8175b1e55d53.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3287"
+      },
+      {
+        "title": "내 남자 주인공의 아내가 되었다",
+        "url": "https://webtoon.kakao.com/content/내-남자-주인공의-아내가-되었다/2830",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2830/c2/2x/bccd408d-327a-4941-a19c-f26c0289948b.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2830"
+      },
+      {
+        "title": "악역 소녀는 사랑받기가 부끄러워요",
+        "url": "https://webtoon.kakao.com/content/악역-소녀는-사랑받기가-부끄러워요/3321",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3321/c2/2x/e3d71e10-6dd6-4c61-b6d1-fa7ee64bb29a.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3321"
+      },
+      {
+        "title": "역하렘 게임 속으로 떨어진 모양입니다",
+        "url": "https://webtoon.kakao.com/content/역하렘-게임-속으로-떨어진-모양입니다/3350",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3350/c2/2x/9c2e6a54-c25a-4d66-8426-2305229b6773.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3350"
+      },
+      {
+        "title": "천마신교 낙양본부",
+        "url": "https://webtoon.kakao.com/content/천마신교-낙양본부/4441",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4441/c2/2x/ffb20cad-3825-4721-a61b-9036c6b48ed0.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4441"
+      },
+      {
+        "title": "대공님이 이상한 데에 눈을 떴습니다",
+        "url": "https://webtoon.kakao.com/content/대공님이-이상한-데에-눈을-떴습니다/4824",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4824/c2/2x/798e04f3-3ff4-490c-98bf-6383430219a7.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4824"
+      },
+      {
+        "title": "집착 광공이 나를 감금하려고 한다",
+        "url": "https://webtoon.kakao.com/content/집착-광공이-나를-감금하려고-한다/4774",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4774/c2/2x/ceb9d3f7-cc0a-492f-81a8-a666042d8404.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4774"
+      },
+      {
+        "title": "이것이 법이다",
+        "url": "https://webtoon.kakao.com/content/이것이-법이다/2671",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2671/c2/2x/9ec5392e-a1d0-4b01-a830-d959407b4d18.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2671"
+      },
+      {
+        "title": "일코하는 황녀님",
+        "url": "https://webtoon.kakao.com/content/일코하는-황녀님/4111",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4111/c2/2x/815f8cd8-ae44-4fd8-9514-fd971c39a2ef.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4111"
+      },
+      {
+        "title": "S급 흑마법사로 레벨업",
+        "url": "https://webtoon.kakao.com/content/S급-흑마법사로-레벨업/4801",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4801/c2/2x/67c72fa1-c78f-4d1c-9360-bdf843aa0051.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4801"
+      },
+      {
+        "title": "부모님을 죽인 원수와 결혼했습니다",
+        "url": "https://webtoon.kakao.com/content/부모님을-죽인-원수와-결혼했습니다/3576",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3576/c2/2x/fbba5b8f-4357-47ea-b8f5-c65698d4ad98.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3576"
+      },
+      {
+        "title": "세자 죽이기",
+        "url": "https://webtoon.kakao.com/content/세자-죽이기/4629",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4629/c2/2x/fc0025db-3e4e-428b-a71d-2bb4daa82370.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4629"
+      },
+      {
+        "title": "괴물 공작의 아내로 살아남는 법 19세 완전판",
+        "url": "https://webtoon.kakao.com/content/괴물-공작의-아내로-살아남는-법-19세-완전판/4752",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4752/c2/2x/a3b9213d-0b09-472c-8f7e-1d0ad229bf98.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4752"
+      },
+      {
+        "title": "만렙 플레이어",
+        "url": "https://webtoon.kakao.com/content/만렙-플레이어/3393",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3393/c2/2x/dfb7154f-c264-4e2f-aff6-786683959279.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3393"
+      },
+      {
+        "title": "검신급 공무원의 회귀",
+        "url": "https://webtoon.kakao.com/content/검신급-공무원의-회귀/4279",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4279/c2/2x/1c681485-d82b-4a2d-a45d-f5a312150a6f.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4279"
+      },
+      {
+        "title": "멸망한 왕국의 3왕자가 회귀했다",
+        "url": "https://webtoon.kakao.com/content/멸망한-왕국의-3왕자가-회귀했다/4528",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4528/c2/2x/30e510ea-d860-4258-8a8a-e68360afd11b.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4528"
+      },
+      {
+        "title": "인생이 레몬을 건네면 위스키를 더하라",
+        "url": "https://webtoon.kakao.com/content/인생이-레몬을-건네면-위스키를-더하라/4780",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4780/c2/2x/0e3b0c94-555a-4cc8-af04-4fb47fe10107.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4780"
+      },
+      {
+        "title": "이차원 용병",
+        "url": "https://webtoon.kakao.com/content/이차원-용병/2317",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2317/c2/2x/27f51ff0-278b-4522-9ea9-ac25d6b232f2.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2317"
+      },
+      {
+        "title": "판타지 세계 속 바바리안으로 살아가기",
+        "url": "https://webtoon.kakao.com/content/판타지-세계-속-바바리안으로-살아가기/4572",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4572/c2/2x/c864eedc-dac8-409f-be40-4acb87dc0116.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4572"
+      },
+      {
+        "title": "블루엔젤 리부트 19세 완전판",
+        "url": "https://webtoon.kakao.com/content/블루엔젤-리부트-19세-완전판/4770",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4770/c2/2x/927d2aec-3475-42db-9002-afd3d2e59072.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4770"
+      },
+      {
+        "title": "고스트 터미널",
+        "url": "https://webtoon.kakao.com/content/고스트-터미널/2898",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2898/c2/2x/787d28b0-e64d-4026-9166-4c6794539dfc.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2898"
+      },
+      {
+        "title": "모기전쟁",
+        "url": "https://webtoon.kakao.com/content/모기전쟁/4782",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4782/c2/2x/7eefbe5b-85a0-48ee-a080-c040d3989fec.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4782"
+      },
+      {
+        "title": "그 대공의 화려한 결혼은 사기",
+        "url": "https://webtoon.kakao.com/content/그-대공의-화려한-결혼은-사기/3500",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3500/c2/2x/877dd6d2-cb02-42bf-8976-f0032754d1a5.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3500"
+      },
+      {
+        "title": "천재 궁수의 스트리밍",
+        "url": "https://webtoon.kakao.com/content/천재-궁수의-스트리밍/4053",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4053/c2/2x/a7146520-505e-423c-a696-1f64abc501bb.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4053"
+      },
+      {
+        "title": "TOP 100 영애",
+        "url": "https://webtoon.kakao.com/content/TOP-100-영애/4458",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4458/c2/2x/65674b1e-a5c3-40e4-9182-4bbab9e239b3.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4458"
+      },
+      {
+        "title": "뱀파이어 로드로 사는 법",
+        "url": "https://webtoon.kakao.com/content/뱀파이어-로드로-사는-법/4696",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4696/c2/2x/e8fb94f9-e311-4721-ac93-8d4ef68913ea.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4696"
+      },
+      {
+        "title": "흑막님 결혼 빼고 다 해드릴게요",
+        "url": "https://webtoon.kakao.com/content/흑막님-결혼-빼고-다-해드릴게요/4398",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4398/c2/2x/e5a240ea-2fe4-409d-a79b-d73f4b557642.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4398"
+      },
+      {
+        "title": "여보 왜 이혼은 안 되나요",
+        "url": "https://webtoon.kakao.com/content/여보-왜-이혼은-안-되나요/4247",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4247/c2/2x/debabeb0-d29c-4bdd-86b9-56b94b697b87.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4247"
+      },
+      {
+        "title": "주인공의 꽃길에 올라타는 방법",
+        "url": "https://webtoon.kakao.com/content/주인공의-꽃길에-올라타는-방법/4640",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4640/c2/2x/730dfe85-7c7d-4cb9-8c7b-b38cc8a7cde7.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4640"
+      },
+      {
+        "title": "다시 한번 빛 속으로",
+        "url": "https://webtoon.kakao.com/content/다시-한번-빛-속으로/2586",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2586/c2/2x/5b707012-ade4-45de-9f54-3be6f20e9a9a.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2586"
+      },
+      {
+        "title": "악녀 황후의 전속 시녀",
+        "url": "https://webtoon.kakao.com/content/악녀-황후의-전속-시녀/3697",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3697/c2/2x/7d300252-4e6f-47ce-9754-b8d98abc96c9.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3697"
+      },
+      {
+        "title": "치트라",
+        "url": "https://webtoon.kakao.com/content/치트라/2330",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2330/c2/2x/4b7e6a24-4f6e-44ef-b4c4-e68602bf81da.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2330"
+      },
+      {
+        "title": "거인의 꽃",
+        "url": "https://webtoon.kakao.com/content/거인의-꽃/4344",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4344/c2/2x/6493ff08-ab9d-43bb-8193-5c2b8763ad19.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4344"
+      },
+      {
+        "title": "마이 스위트 하트 19세 완전판",
+        "url": "https://webtoon.kakao.com/content/마이-스위트-하트-19세-완전판/4705",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4705/c2/2x/993c4ff8-e8aa-4988-89e9-5cf5175845b4.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4705"
+      },
+      {
+        "title": "물질만능주의 공녀님",
+        "url": "https://webtoon.kakao.com/content/물질만능주의-공녀님/3463",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3463/c2/2x/790c5b33-7d4c-44ed-9918-6008cffa8304.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3463"
+      },
+      {
+        "title": "네 목을 비트는 새벽",
+        "url": "https://webtoon.kakao.com/content/네-목을-비트는-새벽/4676",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4676/c2/2x/622f223b-2b30-40fa-a3e1-3e72f60d611c.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4676"
+      },
+      {
+        "title": "월야환담 19세 완전판",
+        "url": "https://webtoon.kakao.com/content/월야환담-19세-완전판/4764",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4764/c2/2x/c7b2a7be-1ed4-486d-a74b-903257b6118c.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4764"
+      },
+      {
+        "title": "조폭 남주의 수위 조정을 위하여",
+        "url": "https://webtoon.kakao.com/content/조폭-남주의-수위-조정을-위하여/4711",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4711/c2/2x/df7328a2-0f13-419f-bb1a-df0d5b67d500.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4711"
+      },
+      {
+        "title": "전령새 왕녀님",
+        "url": "https://webtoon.kakao.com/content/전령새-왕녀님/2531",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2531/c2/2x/aa625c3f-79d3-4d2b-9019-395678c2d3e4.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2531"
+      },
+      {
+        "title": "부활한 악녀를 찾지 마세요",
+        "url": "https://webtoon.kakao.com/content/부활한-악녀를-찾지-마세요/4796",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4796/c2/2x/eb80f158-2797-478b-8394-4b7a0adce50d.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4796"
+      },
+      {
+        "title": "탑랭커의 작가지망생활백서",
+        "url": "https://webtoon.kakao.com/content/탑랭커의-작가지망생활백서/4405",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4405/c2/2x/5b8260f7-0c74-4c4f-90ab-c415c7c4948a.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4405"
+      },
+      {
+        "title": "서브 남주는 내 침대로 오세요",
+        "url": "https://webtoon.kakao.com/content/서브-남주는-내-침대로-오세요/4617",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4617/c2/2x/eafa8282-5016-4841-9a3a-cef68b0d37ee.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4617"
+      },
+      {
+        "title": "회귀한 엑스트라가 천재가 됨",
+        "url": "https://webtoon.kakao.com/content/회귀한-엑스트라가-천재가-됨/4691",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4691/c2/2x/7a9d2433-9e23-41f5-8127-4ea0803be06a.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4691"
+      },
+      {
+        "title": "이 결혼은 어차피 망하게 되어 있다",
+        "url": "https://webtoon.kakao.com/content/이-결혼은-어차피-망하게-되어-있다/3066",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3066/c2/2x/b8adf32c-8888-4c2b-9de0-7a7eef44e100.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3066"
+      },
+      {
+        "title": "무기 먹는 서자님",
+        "url": "https://webtoon.kakao.com/content/무기-먹는-서자님/4418",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4418/c2/2x/ee6a05cf-d257-4adb-94b1-564df1d2c128.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4418"
+      },
+      {
+        "title": "여주인공이 나를 새언니로 점찍었다",
+        "url": "https://webtoon.kakao.com/content/여주인공이-나를-새언니로-점찍었다/3259",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3259/c2/2x/ebcea9a0-aabb-4c5c-babc-1d281f28c631.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3259"
+      },
+      {
+        "title": "깨진 유리 구두의 조각",
+        "url": "https://webtoon.kakao.com/content/깨진-유리-구두의-조각/4659",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4659/c2/2x/0285acf5-77e3-4099-8871-da95ef8a6143.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4659"
+      },
+      {
+        "title": "세계수의 사랑을 받는 정원사가 되었다",
+        "url": "https://webtoon.kakao.com/content/세계수의-사랑을-받는-정원사가-되었다/4712",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4712/c2/2x/33a5274e-fe8b-4212-8807-4876c2bf362f.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4712"
+      },
+      {
+        "title": "비겁한 너의 겨울은",
+        "url": "https://webtoon.kakao.com/content/비겁한-너의-겨울은/4036",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4036/c2/2x/9772a049-9092-48d1-921d-8c0b6c196777.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4036"
+      },
+      {
+        "title": "모두의 황녀님",
+        "url": "https://webtoon.kakao.com/content/모두의-황녀님/3545",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3545/c2/2x/14e057e0-481b-4781-99ad-80299bc46f1f.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3545"
+      },
+      {
+        "title": "연하는 욕구불만15세 개정판",
+        "url": "https://webtoon.kakao.com/content/연하는-욕구불만15세-개정판/4170",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4170/c2/2x/8dd8e24b-1c81-46e8-b144-d30b7acdf6d7.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4170"
+      },
+      {
+        "title": "흑막의 독 감별사가 되겠습니다",
+        "url": "https://webtoon.kakao.com/content/흑막의-독-감별사가-되겠습니다/3789",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3789/c2/2x/ff5ee000-558d-4382-8a67-45fef7054538.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3789"
+      },
+      {
+        "title": "101번째 고백",
+        "url": "https://webtoon.kakao.com/content/101번째-고백/4575",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4575/c2/2x/eaedc87c-d530-4ef3-8dda-d1dc93f825a6.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4575"
+      },
+      {
+        "title": "황후님의 바늘",
+        "url": "https://webtoon.kakao.com/content/황후님의-바늘/4524",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4524/c2/2x/6c2e06f1-71ef-4292-b8b1-abb65e754777.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4524"
+      },
+      {
+        "title": "섹시한 폐하와 함께하는 전원생활",
+        "url": "https://webtoon.kakao.com/content/섹시한-폐하와-함께하는-전원생활/4351",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4351/c2/2x/3a1f812e-ef50-447f-a0a3-9152337d0b69.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4351"
+      },
+      {
+        "title": "공포게임 남주와 감금당했다 19세 완전판",
+        "url": "https://webtoon.kakao.com/content/공포게임-남주와-감금당했다-19세-완전판/4343",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4343/c2/2x/949666f8-60cd-4730-9d77-9245b79a3df2.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4343"
+      },
+      {
+        "title": "나의 다정한 무뢰한에게",
+        "url": "https://webtoon.kakao.com/content/나의-다정한-무뢰한에게/4762",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4762/c2/2x/ffb272b9-afba-417c-84a2-408962ff2b4b.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4762"
+      },
+      {
+        "title": "국혼",
+        "url": "https://webtoon.kakao.com/content/국혼/4135",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4135/c2/2x/5c1a3748-6b7c-4712-9e9a-6afd0d1588cf.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4135"
+      },
+      {
+        "title": "이번 생은 아역부터",
+        "url": "https://webtoon.kakao.com/content/이번-생은-아역부터/3834",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3834/c2/2x/8bcd83e1-a583-4d67-bfff-87408b054b02.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3834"
+      },
+      {
+        "title": "메인 히로인들이 나를 죽이려 한다",
+        "url": "https://webtoon.kakao.com/content/메인-히로인들이-나를-죽이려-한다/4371",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4371/c2/2x/0ebfdcab-3005-4f84-9bc3-783d684c6c2c.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4371"
+      },
+      {
+        "title": "S급 정령사의 테이밍 일기",
+        "url": "https://webtoon.kakao.com/content/S급-정령사의-테이밍-일기/4285",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4285/c2/2x/f6c38cd1-f4e2-4838-93b5-cee2f389e2bd.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4285"
+      },
+      {
+        "title": "미친 범고래의 애착 펭귄",
+        "url": "https://webtoon.kakao.com/content/미친-범고래의-애착-펭귄/4171",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4171/c2/2x/1fc579f3-8d43-4630-9c95-098e3a00ad21.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4171"
+      },
+      {
+        "title": "황녀님이 사악하셔",
+        "url": "https://webtoon.kakao.com/content/황녀님이-사악하셔/3007",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3007/c2/2x/5450d2e6-ca10-4825-b878-01a99bc8981c.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3007"
+      },
+      {
+        "title": "컨셉러가 최강 스승임",
+        "url": "https://webtoon.kakao.com/content/컨셉러가-최강-스승임/4706",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4706/c2/2x/3ebee352-015a-4372-a67c-00a484d28bcb.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4706"
+      },
+      {
+        "title": "마존현세강림기",
+        "url": "https://webtoon.kakao.com/content/마존현세강림기/2350",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2350/c2/2x/4c803ebe-678a-458d-ba87-ad9e5d2efe6a.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2350"
+      },
+      {
+        "title": "흑막의 말년운이 좋다",
+        "url": "https://webtoon.kakao.com/content/흑막의-말년운이-좋다/3954",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3954/c2/2x/584897fc-4c59-4c26-9504-dfff2d973b7c.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3954"
+      },
+      {
+        "title": "복수의 시작은 결혼부터",
+        "url": "https://webtoon.kakao.com/content/복수의-시작은-결혼부터/4803",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4803/c2/2x/22d34c27-51b4-4f40-91a2-d23976713df3.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4803"
+      },
+      {
+        "title": "힐링물 속 피폐 엑스트라가 되었다",
+        "url": "https://webtoon.kakao.com/content/힐링물-속-피폐-엑스트라가-되었다/4406",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4406/c2/2x/fc513b73-6a0c-4bf9-899a-3ea14689bccb.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4406"
+      },
+      {
+        "title": "조무래기 공작가의 깡패 아기님",
+        "url": "https://webtoon.kakao.com/content/조무래기-공작가의-깡패-아기님/3614",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3614/c2/2x/d2cf03db-0501-4dfc-b005-0007e8bb7a63.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3614"
+      },
+      {
+        "title": "사생아 공주로 살아남기",
+        "url": "https://webtoon.kakao.com/content/사생아-공주로-살아남기/2966",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2966/c2/2x/5239286d-dc89-4fcc-b5a2-bc39126445d4.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2966"
+      },
+      {
+        "title": "초심 잃은 아이돌을 위한 회귀 백서",
+        "url": "https://webtoon.kakao.com/content/초심-잃은-아이돌을-위한-회귀-백서/4157",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4157/c2/2x/72154106-e313-4ed7-8adc-8bf1bfd7df11.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4157"
+      },
+      {
+        "title": "흑백무제",
+        "url": "https://webtoon.kakao.com/content/흑백무제/3871",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3871/c2/2x/73080d94-1ed1-4e40-a09a-d7d464e1ac34.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3871"
+      },
+      {
+        "title": "프린세스",
+        "url": "https://webtoon.kakao.com/content/프린세스/3013",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3013/c2/2x/e0dfefe3-bbd9-433f-a95c-17f0bea4f085.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3013"
+      },
+      {
+        "title": "엄마는 내 성좌",
+        "url": "https://webtoon.kakao.com/content/엄마는-내-성좌/3408",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3408/c2/2x/a040c874-3565-4204-a3ba-e10e0a4a9bf9.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3408"
+      },
+      {
+        "title": "환생무신",
+        "url": "https://webtoon.kakao.com/content/환생무신/4489",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4489/c2/2x/94d2045c-2ae5-49c2-b7ca-2d79116a4898.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4489"
+      },
+      {
+        "title": "악인들의 대사형",
+        "url": "https://webtoon.kakao.com/content/악인들의-대사형/4420",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4420/c2/2x/2f9d2b1a-c641-4643-91da-55d959f64b59.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4420"
+      },
+      {
+        "title": "여주 친구의 역습",
+        "url": "https://webtoon.kakao.com/content/여주-친구의-역습/4375",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4375/c2/2x/cd87e65a-600e-404e-bf5a-59746625a477.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4375"
+      },
+      {
+        "title": "조선왕자가 미국갔다 안 돌아옴",
+        "url": "https://webtoon.kakao.com/content/조선왕자가-미국갔다-안-돌아옴/4390",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4390/c2/2x/6e9edeac-be2e-494f-ac3c-6ebf0dad620b.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4390"
+      },
+      {
+        "title": "천하제일 의뢰문",
+        "url": "https://webtoon.kakao.com/content/천하제일-의뢰문/3380",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3380/c2/2x/2d86b665-722c-4a07-b8e3-b6590d268668.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3380"
+      },
+      {
+        "title": "아기 마님은 복수 메이커",
+        "url": "https://webtoon.kakao.com/content/아기-마님은-복수-메이커/3927",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3927/c2/2x/3d4a8714-bc0f-4be0-9160-2db2d33dfa19.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3927"
+      },
+      {
+        "title": "힘을 숨겨도 공녀가 제일 강함",
+        "url": "https://webtoon.kakao.com/content/힘을-숨겨도-공녀가-제일-강함/4634",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4634/c2/2x/a020176f-6c81-4d2f-877e-2a413df38a59.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4634"
+      },
+      {
+        "title": "검빨로 레벨업",
+        "url": "https://webtoon.kakao.com/content/검빨로-레벨업/2922",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2922/c2/2x/0bfccb68-a651-4d39-b398-7dc86f844b4d.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2922"
+      },
+      {
+        "title": "이세계 덤프트럭",
+        "url": "https://webtoon.kakao.com/content/이세계-덤프트럭/3479",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3479/c2/2x/c096257b-e4a2-4f69-9f92-1ce24d9809c2.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3479"
+      },
+      {
+        "title": "아크",
+        "url": "https://webtoon.kakao.com/content/아크/2391",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2391/c2/2x/9f9e3241-d668-4404-85ff-3b36f12fbd6b.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2391"
+      },
+      {
+        "title": "남주의 트라우마를 치료해주었는데",
+        "url": "https://webtoon.kakao.com/content/남주의-트라우마를-치료해주었는데/4566",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4566/c2/2x/d475d1c5-29dd-421b-809d-b5db749bd05e.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4566"
+      },
+      {
+        "title": "인생 날로 먹고 싶습니다",
+        "url": "https://webtoon.kakao.com/content/인생-날로-먹고-싶습니다/4211",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4211/c2/2x/adebafea-7ec9-4ec3-b28f-751e4343189d.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4211"
+      },
+      {
+        "title": "검은 여우 독심호리곤륜검선 백병지주",
+        "url": "https://webtoon.kakao.com/content/검은-여우-독심호리곤륜검선-백병지주/4403",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4403/c2/2x/0e1eaaa1-d67d-44bd-9548-4ffa547c247e.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4403"
+      },
+      {
+        "title": "처음이라 몰랐던 것들",
+        "url": "https://webtoon.kakao.com/content/처음이라-몰랐던-것들/4461",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4461/c2/2x/be7488a8-0765-4d05-ad97-6578a89d0781.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4461"
+      },
+      {
+        "title": "시녀의 유혹 개정판",
+        "url": "https://webtoon.kakao.com/content/시녀의-유혹-개정판/4785",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4785/c2/2x/5eba10ae-e2bf-43a4-b4a3-e21d5314480d.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4785"
+      },
+      {
+        "title": "당골의 신부",
+        "url": "https://webtoon.kakao.com/content/당골의-신부/3228",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3228/c2/2x/85efc07c-c8b4-4a59-a91c-dce573129162.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3228"
+      },
+      {
+        "title": "소꿉친구가 집착 남편이 되었다",
+        "url": "https://webtoon.kakao.com/content/소꿉친구가-집착-남편이-되었다/3804",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3804/c2/2x/dbc800f0-b9cc-4b38-97e9-ee54981904c3.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3804"
+      },
+      {
+        "title": "입학은 괜히 해 가지고",
+        "url": "https://webtoon.kakao.com/content/입학은-괜히-해-가지고/4264",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4264/c2/2x/74930c45-a4f8-49bc-8afc-861d1cdb0b1b.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4264"
+      },
+      {
+        "title": "짝사랑의 끝",
+        "url": "https://webtoon.kakao.com/content/짝사랑의-끝/4779",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4779/c2/2x/897ecdf3-2b10-47d4-bdf7-84f4470c9064.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4779"
+      },
+      {
+        "title": "셀럽 레이디",
+        "url": "https://webtoon.kakao.com/content/셀럽-레이디/4143",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4143/c2/2x/52b72b2d-5c3c-4e17-8445-7811850adadd.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4143"
+      },
+      {
+        "title": "인생 2회차 아이돌의 럭키플랜",
+        "url": "https://webtoon.kakao.com/content/인생-2회차-아이돌의-럭키플랜/4669",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4669/c2/2x/af105da5-ed23-4010-97a3-31fccefab17b.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4669"
+      },
+      {
+        "title": "공포게임 남주와 감금당했다",
+        "url": "https://webtoon.kakao.com/content/공포게임-남주와-감금당했다/3996",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3996/c2/2x/d91b49e2-b3c0-49a3-905d-c66a684cdf6a.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3996"
+      },
+      {
+        "title": "연기 천재 TOP 아이돌",
+        "url": "https://webtoon.kakao.com/content/연기-천재-TOP-아이돌/3858",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3858/c2/2x/4261ef51-2b70-4df1-a225-a48cea52c230.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3858"
+      },
+      {
+        "title": "신들의 성좌",
+        "url": "https://webtoon.kakao.com/content/신들의-성좌/3558",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3558/c2/2x/ced7e748-a61b-4ada-93d6-d977e042be67.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3558"
+      },
+      {
+        "title": "아기 용태자비는 미친놈들을 길들인다",
+        "url": "https://webtoon.kakao.com/content/아기-용태자비는-미친놈들을-길들인다/3474",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3474/c2/2x/0400098a-4070-4165-9062-e631c03cbf99.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3474"
+      },
+      {
+        "title": "악당 삼촌이랑 살아요",
+        "url": "https://webtoon.kakao.com/content/악당-삼촌이랑-살아요/4571",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4571/c2/2x/407b2275-22b6-45e5-ad7f-685088e6d2fd.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4571"
+      },
+      {
+        "title": "천검기협",
+        "url": "https://webtoon.kakao.com/content/천검기협/2949",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2949/c2/2x/c13c2e29-1b52-45f9-9fea-7134204103c8.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2949"
+      },
+      {
+        "title": "드래곤 레이디",
+        "url": "https://webtoon.kakao.com/content/드래곤-레이디/3568",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3568/c2/2x/af695da5-23e8-4291-b216-cd779dad6e6b.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3568"
+      },
+      {
+        "title": "호위무사",
+        "url": "https://webtoon.kakao.com/content/호위무사/2782",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2782/c2/2x/091b5342-5eb2-40e4-b54a-5d659ef7d1a6.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2782"
+      },
+      {
+        "title": "핵무기도 만들어 드릴까요",
+        "url": "https://webtoon.kakao.com/content/핵무기도-만들어-드릴까요/4304",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4304/c2/2x/09f024e4-a229-4567-8e18-ced71fe7398f.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4304"
+      },
+      {
+        "title": "강철대제",
+        "url": "https://webtoon.kakao.com/content/강철대제/4341",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4341/c2/2x/0dd61f13-f4bf-46b7-b00b-d780ed4c3f00.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4341"
+      },
+      {
+        "title": "내 딸이 아니었다",
+        "url": "https://webtoon.kakao.com/content/내-딸이-아니었다/4473",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4473/c2/2x/46d42dba-1e03-479c-adf6-61df5f0ac0ee.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4473"
+      },
+      {
+        "title": "검은 머리 아빠는 거두는 게 아니다",
+        "url": "https://webtoon.kakao.com/content/검은-머리-아빠는-거두는-게-아니다/4599",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4599/c2/2x/3ad9086f-b455-4d23-a33d-012cd4b15435.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4599"
+      },
+      {
+        "title": "알고 보면 쓸모 있는 사기결혼",
+        "url": "https://webtoon.kakao.com/content/알고-보면-쓸모-있는-사기결혼/4632",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4632/c2/2x/9ead8b1b-070d-43b6-b829-bcfbf154be13.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4632"
+      },
+      {
+        "title": "그래도 라이언",
+        "url": "https://webtoon.kakao.com/content/그래도-라이언/4431",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4431/c2/2x/33d23922-be58-4fa0-8325-5c7214f9216f.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4431"
+      },
+      {
+        "title": "남편을 잘못 키워 버렸다",
+        "url": "https://webtoon.kakao.com/content/남편을-잘못-키워-버렸다/4131",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4131/c2/2x/40dc4c17-eca9-4926-9612-2c93ae886808.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4131"
+      },
+      {
+        "title": "레이디 비스트",
+        "url": "https://webtoon.kakao.com/content/레이디-비스트/2328",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2328/c2/2x/71b4a9b4-fc43-45e4-bdaa-38639d8baecf.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2328"
+      },
+      {
+        "title": "제목이 보이는데요",
+        "url": "https://webtoon.kakao.com/content/제목이-보이는데요/4702",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4702/c2/2x/1f9f6ccf-2581-412e-a6a4-4e8b46f25025.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4702"
+      },
+      {
+        "title": "더 챌린저",
+        "url": "https://webtoon.kakao.com/content/더-챌린저/2536",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2536/c2/2x/22b506ec-a0bf-41e1-850a-a22118557acb.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2536"
+      },
+      {
+        "title": "나의 황제께 붉은 월계수 꽃을",
+        "url": "https://webtoon.kakao.com/content/나의-황제께-붉은-월계수-꽃을/3286",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3286/c2/2x/c61c831c-1934-4ad8-bc43-af6ff5e365c3.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3286"
+      },
+      {
+        "title": "리라이프 플레이어",
+        "url": "https://webtoon.kakao.com/content/리라이프-플레이어/3159",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3159/c2/2x/2b67139b-3eae-4bee-a2c1-5937f52f17a3.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3159"
+      },
+      {
+        "title": "천마는 아이돌이 되었다",
+        "url": "https://webtoon.kakao.com/content/천마는-아이돌이-되었다/4162",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4162/c2/2x/37da85c5-78b4-40fe-8dd1-f4c2de25070f.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4162"
+      },
+      {
+        "title": "DELETE",
+        "url": "https://webtoon.kakao.com/content/DELETE/3717",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3717/c2/2x/9c53e169-bd97-4ba1-95cc-b5028508e49d.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3717"
+      },
+      {
+        "title": "던전 앞 SSS급 카페",
+        "url": "https://webtoon.kakao.com/content/던전-앞-SSS급-카페/4440",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4440/c2/2x/897e768b-1f7b-48c8-94e7-63ef50b810f0.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4440"
+      },
+      {
+        "title": "사령왕 카르나크",
+        "url": "https://webtoon.kakao.com/content/사령왕-카르나크/4204",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4204/c2/2x/e4db60a7-6a3b-4b96-a7f7-e89fff60b9c1.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4204"
+      },
+      {
+        "title": "공녀님은 독수공방 체질입니다",
+        "url": "https://webtoon.kakao.com/content/공녀님은-독수공방-체질입니다/4280",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4280/c2/2x/a6b39214-8178-4d89-83d9-4adbadf5af51.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4280"
+      },
+      {
+        "title": "질풍패도",
+        "url": "https://webtoon.kakao.com/content/질풍패도/3691",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3691/c2/2x/0923be63-1b56-4dbb-9c0b-df586d008e0f.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3691"
+      },
+      {
+        "title": "세상에 나쁜 금쪽이는 없다",
+        "url": "https://webtoon.kakao.com/content/세상에-나쁜-금쪽이는-없다/4361",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4361/c2/2x/2ee059a8-1f33-4a42-a42a-4f09fc388202.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4361"
+      },
+      {
+        "title": "백타무적",
+        "url": "https://webtoon.kakao.com/content/백타무적/3713",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3713/c2/2x/922ad4ab-2520-4294-9b68-c1d9d825f2c0.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3713"
+      },
+      {
+        "title": "순백의 엘리사벳",
+        "url": "https://webtoon.kakao.com/content/순백의-엘리사벳/2520",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2520/c2/2x/991475bb-f3a6-40d4-955d-c567b531f490.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2520"
+      },
+      {
+        "title": "남편이 첫사랑을 닮았다",
+        "url": "https://webtoon.kakao.com/content/남편이-첫사랑을-닮았다/4424",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4424/c2/2x/91443348-ce28-418c-bd64-8652b4ceb5a4.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4424"
+      },
+      {
+        "title": "이혼하고 가족을 버렸다",
+        "url": "https://webtoon.kakao.com/content/이혼하고-가족을-버렸다/3888",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3888/c2/2x/0a2fedd0-3fd1-4bc8-9887-42dcbb502739.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3888"
+      },
+      {
+        "title": "공작님 회개해주세요",
+        "url": "https://webtoon.kakao.com/content/공작님-회개해주세요/3245",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3245/c2/2x/08c65b87-f558-48b2-b7a8-587cbbbf350d.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3245"
+      },
+      {
+        "title": "그녀의 해피엔딩 공략기",
+        "url": "https://webtoon.kakao.com/content/그녀의-해피엔딩-공략기/4553",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4553/c2/2x/50636177-97b8-4331-a8bc-15296f9167f0.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4553"
+      },
+      {
+        "title": "마신은 평화롭게 살고 싶다",
+        "url": "https://webtoon.kakao.com/content/마신은-평화롭게-살고-싶다/3251",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3251/c2/2x/d3258373-3abe-4b62-91b0-77fc49d7ce33.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3251"
+      },
+      {
+        "title": "임기 첫날에 게이트가 열렸다",
+        "url": "https://webtoon.kakao.com/content/임기-첫날에-게이트가-열렸다/2956",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2956/c2/2x/87a584c8-2e65-4df3-a3b3-09d15133c31e.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2956"
+      },
+      {
+        "title": "뽑기왕",
+        "url": "https://webtoon.kakao.com/content/뽑기왕/4284",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/4284/c2/2x/a8c84c32-b209-4b7c-a41f-c2681bfaf75f.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "4284"
+      },
+      {
+        "title": "전신의 강림",
+        "url": "https://webtoon.kakao.com/content/전신의-강림/3195",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/3195/c2/2x/6b9384ea-357b-40d4-ae0f-03972ecdc09b.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "3195"
+      },
+      {
+        "title": "라이프 크라이",
+        "url": "https://webtoon.kakao.com/content/라이프-크라이/2892",
+        "thumb": "https://kr-a.kakaopagecdn.com/P/C/2892/c2/2x/93606c4a-6240-4e57-822c-6e548cabfd82.webp",
+        "platform": "kakao",
+        "day": "fri",
+        "dayLabel": "금",
+        "contentId": "2892"
+      }
+    ],
+    "sat": [],
+    "sun": []
+  }
+}
