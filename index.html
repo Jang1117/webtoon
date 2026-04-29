@@ -277,6 +277,7 @@
   }
 
   .webtoon-card {
+    position: relative;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -293,6 +294,22 @@
     transform: translateY(-4px);
     box-shadow: 0 12px 32px rgba(0,0,0,0.4);
     border-color: rgba(255,255,255,0.15);
+  }
+
+
+  .card-open-area {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .card-open-area:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
   }
 
   .card-thumb {
@@ -1269,57 +1286,77 @@ function escapeHtml(value) {
 function escapeAttr(value) { return escapeHtml(value); }
 function escapeJsString(value) { return String(value || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, ' '); }
 
+
+function openWebtoonFromElement(el) {
+  const url = el && el.dataset ? el.dataset.url : '';
+  if (url) window.open(url, '_blank', 'noopener');
+}
+
+function handleOpenKey(event, el) {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    openWebtoonFromElement(el);
+  }
+}
+
+function stopCardButtonEvent(event) {
+  if (!event) return;
+  event.preventDefault();
+  event.stopPropagation();
+  if (typeof event.stopImmediatePropagation === 'function') event.stopImmediatePropagation();
+}
+
+function openDelFromButton(event, platform, day, id, title, isCustom) {
+  stopCardButtonEvent(event);
+  openDel(platform, day, id, title, isCustom);
+}
+
+function openEditFromButton(event, platform, day, id, isCustom) {
+  stopCardButtonEvent(event);
+  openEdit(platform, day, id, event, isCustom);
+}
+
 function renderCard(w, platform, dayKey) {
   const cardId = w.custom ? w.id : (w._jsonId || `${platform}__${dayKey}__${getItemId(w, platform, dayKey)}`);
-  const safeTitle = escapeJsString(w.title);
-  const safeUrl = escapeJsString(w.url);
   const isCustom = !!w.custom;
-  const delBtn = `<button type="button" class="card-delete-btn" onclick="event.preventDefault(); event.stopPropagation(); event.stopImmediatePropagation(); openDel('${platform}','${dayKey}',${JSON.stringify(cardId)},'${safeTitle}',${isCustom})">×</button>`;
-  const editBtn = `<button type="button" class="card-edit-btn" onclick="event.preventDefault(); event.stopPropagation(); event.stopImmediatePropagation(); openEdit('${platform}','${dayKey}',${JSON.stringify(cardId)},event,${isCustom})" title="수정">✎</button>`;
-  const customBadge = isCustom ? `<div class="card-custom-badge">내 추가</div>` : '';
   const title = escapeHtml(w.title || '제목 없음');
   const author = escapeHtml(w.author || '');
   const genre = escapeHtml(w.genre || '');
   const emoji = escapeHtml(w.emoji || '📚');
   const thumb = w.thumb ? escapeAttr(w.thumb) : '';
+  const url = escapeAttr(w.url || '');
+
+  const delAction = escapeAttr(`openDelFromButton(event, ${JSON.stringify(platform)}, ${JSON.stringify(dayKey)}, ${JSON.stringify(cardId)}, ${JSON.stringify(w.title || '')}, ${isCustom})`);
+  const editAction = escapeAttr(`openEditFromButton(event, ${JSON.stringify(platform)}, ${JSON.stringify(dayKey)}, ${JSON.stringify(cardId)}, ${isCustom})`);
+  const delBtn = `<button type="button" class="card-delete-btn" onclick="${delAction}" aria-label="삭제">×</button>`;
+  const editBtn = `<button type="button" class="card-edit-btn" onclick="${editAction}" title="수정" aria-label="수정">✎</button>`;
+  const customBadge = isCustom ? `<div class="card-custom-badge">내 추가</div>` : '';
 
   const thumbContent = thumb
     ? `<img class="thumb-img" src="${thumb}" alt="${title}" referrerpolicy="no-referrer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="thumb-placeholder" style="display:none;">${emoji}</div>`
     : `<div class="thumb-placeholder">${emoji}</div>`;
 
   return `
-    <div class="webtoon-card" role="link" tabindex="0"
-      onclick="handleCardClick(event, '${safeUrl}')"
-      onkeydown="handleCardKeydown(event, '${safeUrl}')">
-      <div class="card-thumb" style="position:relative;">
-        ${thumbContent}
-        ${delBtn}
-        ${editBtn}
-        ${w.isNew ? '<div class="card-new-badge">NEW</div>' : ''}
-        ${customBadge}
-        <div class="card-platform-dot ${platform}"></div>
-      </div>
-      <div class="card-info">
-        <div class="card-title">${title}</div>
-        ${author ? `<div class="card-author">${author}</div>` : ''}
-        ${genre ? `<div class="card-tags"><span class="card-tag">${genre}</span></div>` : ''}
+    <div class="webtoon-card">
+      ${delBtn}
+      ${editBtn}
+      <div class="card-open-area" role="link" tabindex="0" data-url="${url}"
+        onclick="openWebtoonFromElement(this)"
+        onkeydown="handleOpenKey(event, this)">
+        <div class="card-thumb" style="position:relative;">
+          ${thumbContent}
+          ${w.isNew ? '<div class="card-new-badge">NEW</div>' : ''}
+          ${customBadge}
+          <div class="card-platform-dot ${platform}"></div>
+        </div>
+        <div class="card-info">
+          <div class="card-title">${title}</div>
+          ${author ? `<div class="card-author">${author}</div>` : ''}
+          ${genre ? `<div class="card-tags"><span class="card-tag">${genre}</span></div>` : ''}
+        </div>
       </div>
     </div>
   `;
-}
-
-
-function handleCardClick(event, url) {
-  if (event.target.closest('button')) return;
-  window.open(url, '_blank', 'noopener');
-}
-
-function handleCardKeydown(event, url) {
-  if (event.target.closest('button')) return;
-  if (event.key === 'Enter' || event.key === ' ') {
-    event.preventDefault();
-    window.open(url, '_blank', 'noopener');
-  }
 }
 
 function showToast(msg) {
