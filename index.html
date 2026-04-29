@@ -573,6 +573,50 @@
   }
   .webtoon-card:hover .card-edit-btn { display: flex; }
 
+  /* ── FAVORITE BUTTON ── */
+  .card-fav-btn {
+    position: absolute;
+    top: 28px; right: 4px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: rgba(20,20,28,0.78);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.7);
+    font-size: 11px;
+    line-height: 1;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    padding: 0;
+  }
+  .webtoon-card:hover .card-fav-btn,
+  .card-fav-btn.active { display: flex; }
+  .card-fav-btn.active {
+    background: rgba(255,205,0,0.92);
+    border-color: rgba(255,205,0,0.95);
+    color: #3C1E1E;
+    box-shadow: 0 0 12px rgba(255,205,0,0.35);
+  }
+  .card-fav-btn:hover { transform: scale(1.08); }
+  .favorite-section .platform-label { border-bottom-color: rgba(255,205,0,0.22); }
+  .favorite-section .logo-badge.favorite {
+    background: rgba(255,205,0,0.14);
+    color: #ffd84d;
+    border: 1px solid rgba(255,205,0,0.3);
+  }
+  :root.light .card-fav-btn {
+    background: rgba(255,255,255,0.9);
+    border-color: rgba(0,0,0,0.12);
+    color: #777;
+  }
+  :root.light .card-fav-btn.active {
+    background: rgba(255,205,0,0.95);
+    border-color: rgba(210,165,0,0.6);
+    color: #3C1E1E;
+  }
+
   /* ── SELECT OPTION LIGHT ── */
   :root.light select.form-input option { background: #FFFFFF; color: #18181F; }
   :root.light .form-input { background: #EEEEF4; border-color: rgba(0,0,0,0.1); color: #18181F; }
@@ -1171,6 +1215,53 @@ function togglePlatform(plat, btn) {
   renderContent();
 }
 
+function getRenderItemId(w, platform, key, index = 0) {
+  const actualPlatform = w._plat || platform;
+  return w.custom ? w.id : (w._jsonId || `${actualPlatform}__${key}__${getItemId(w, actualPlatform, key, index)}`);
+}
+
+function getFavorites() {
+  return Array.isArray(customData._favorites) ? customData._favorites : [];
+}
+
+function isFavoriteId(id) {
+  return getFavorites().includes(String(id));
+}
+
+function toggleFavoriteById(event, id, title) {
+  stopCardButtonEvent(event);
+  const favId = String(id);
+  if (!customData._favorites) customData._favorites = [];
+  const idx = customData._favorites.indexOf(favId);
+  if (idx === -1) {
+    customData._favorites.push(favId);
+    showToast(`"${title}" 즐겨찾기 추가`);
+  } else {
+    customData._favorites.splice(idx, 1);
+    showToast(`"${title}" 즐겨찾기 해제`);
+  }
+  saveCustomData();
+  renderContent();
+}
+
+function favoriteFirst(list, platform, key) {
+  return (list || []).slice().sort((a, b) => {
+    const aFav = isFavoriteId(getRenderItemId(a, platform, key)) ? 1 : 0;
+    const bFav = isFavoriteId(getRenderItemId(b, platform, key)) ? 1 : 0;
+    return bFav - aFav;
+  });
+}
+
+function splitFavorites(list, platform, key) {
+  const favorites = [];
+  const normal = [];
+  for (const item of list || []) {
+    if (isFavoriteId(getRenderItemId(item, platform, key))) favorites.push(item);
+    else normal.push(item);
+  }
+  return { favorites, normal };
+}
+
 function applySavedChanges(list, platform, key) {
   const deleted = customData._deleted || [];
   const overrides = customData._overrides || {};
@@ -1200,17 +1291,29 @@ function renderContent() {
   const main = document.getElementById('main');
   const dayName = DAYS[selectedDay];
 
-  const naverList = activePlatforms.naver ? [
+  const naverAll = activePlatforms.naver ? [
     ...applySavedChanges(dataStore.naver[key] || [], 'naver', key),
     ...customList('naver', key)
   ] : [];
-  const kakaoList = activePlatforms.kakao ? [
+  const kakaoAll = activePlatforms.kakao ? [
     ...applySavedChanges(dataStore.kakao[key] || [], 'kakao', key),
     ...customList('kakao', key)
   ] : [];
-  const otherList = customList('other', key);
+  const otherAll = customList('other', key);
 
-  const total = naverList.length + kakaoList.length + otherList.length;
+  const naverSplit = splitFavorites(naverAll, 'naver', key);
+  const kakaoSplit = splitFavorites(kakaoAll, 'kakao', key);
+  const otherSplit = splitFavorites(otherAll, 'other', key);
+  const favoriteList = favoriteFirst([
+    ...naverSplit.favorites,
+    ...kakaoSplit.favorites,
+    ...otherSplit.favorites
+  ], 'favorite', key);
+  const naverList = naverSplit.normal;
+  const kakaoList = kakaoSplit.normal;
+  const otherList = otherSplit.normal;
+
+  const total = naverAll.length + kakaoAll.length + otherAll.length;
 
   let html = `
     <div class="section-header fade-in">
@@ -1225,18 +1328,24 @@ function renderContent() {
     return;
   }
 
-  if (naverList.length > 0) html += renderPlatformSection('naver', '🟢 NAVER 웹툰', `https://comic.naver.com/webtoon?tab=${key}`, naverList, key);
-  if (kakaoList.length > 0) html += renderPlatformSection('kakao', '🟡 KAKAO 웹툰', 'https://webtoon.kakao.com/', kakaoList, key);
-  if (otherList.length > 0) html += renderPlatformSection('other', '🔵 기타', '', otherList, key);
+  if (favoriteList.length > 0) html += renderPlatformSection('favorite', '⭐ 즐겨찾기', '', favoriteList, key);
+  if (naverList.length > 0) html += renderPlatformSection('naver', '🟢 NAVER 웹툰', `https://comic.naver.com/webtoon?tab=${key}`, favoriteFirst(naverList, 'naver', key), key);
+  if (kakaoList.length > 0) html += renderPlatformSection('kakao', '🟡 KAKAO 웹툰', 'https://webtoon.kakao.com/', favoriteFirst(kakaoList, 'kakao', key), key);
+  if (otherList.length > 0) html += renderPlatformSection('other', '🔵 기타', '', favoriteFirst(otherList, 'other', key), key);
 
   main.innerHTML = html;
 }
 
 function renderFinishedContent() {
   const main = document.getElementById('main');
-  const naverList = activePlatforms.naver ? applySavedChanges(dataStore.naver.finished || [], 'naver', FINISHED_KEY) : [];
-  const kakaoList = activePlatforms.kakao ? applySavedChanges(dataStore.kakao.finished || [], 'kakao', FINISHED_KEY) : [];
-  const total = naverList.length + kakaoList.length;
+  const naverAll = activePlatforms.naver ? applySavedChanges(dataStore.naver.finished || [], 'naver', FINISHED_KEY) : [];
+  const kakaoAll = activePlatforms.kakao ? applySavedChanges(dataStore.kakao.finished || [], 'kakao', FINISHED_KEY) : [];
+  const naverSplit = splitFavorites(naverAll, 'naver', FINISHED_KEY);
+  const kakaoSplit = splitFavorites(kakaoAll, 'kakao', FINISHED_KEY);
+  const favoriteList = favoriteFirst([...naverSplit.favorites, ...kakaoSplit.favorites], 'favorite', FINISHED_KEY);
+  const naverList = naverSplit.normal;
+  const kakaoList = kakaoSplit.normal;
+  const total = naverAll.length + kakaoAll.length;
 
   let html = `
     <div class="section-header fade-in">
@@ -1251,18 +1360,20 @@ function renderFinishedContent() {
     return;
   }
 
-  if (naverList.length > 0) html += renderPlatformSection('naver', '🟢 NAVER 완결 웹툰', 'https://comic.naver.com/webtoon?tab=finish', naverList, FINISHED_KEY);
-  if (kakaoList.length > 0) html += renderPlatformSection('kakao', '🟡 KAKAO 완결 웹툰', 'https://webtoon.kakao.com/', kakaoList, FINISHED_KEY);
+  if (favoriteList.length > 0) html += renderPlatformSection('favorite', '⭐ 즐겨찾기', '', favoriteList, FINISHED_KEY);
+  if (naverList.length > 0) html += renderPlatformSection('naver', '🟢 NAVER 완결 웹툰', 'https://comic.naver.com/webtoon?tab=finish', favoriteFirst(naverList, 'naver', FINISHED_KEY), FINISHED_KEY);
+  if (kakaoList.length > 0) html += renderPlatformSection('kakao', '🟡 KAKAO 완결 웹툰', 'https://webtoon.kakao.com/', favoriteFirst(kakaoList, 'kakao', FINISHED_KEY), FINISHED_KEY);
 
   main.innerHTML = html;
 }
 
 function renderPlatformSection(platform, label, link, list, key) {
   const linkHtml = link ? `<a href="${link}" target="_blank" class="platform-link">전체 보기 →</a>` : '';
-  const badgeClass = platform === 'naver' ? 'naver' : platform === 'kakao' ? 'kakao' : '';
+  const badgeClass = platform === 'naver' ? 'naver' : platform === 'kakao' ? 'kakao' : platform === 'favorite' ? 'favorite' : '';
   const badgeStyle = platform === 'other' ? 'style="background:rgba(108,99,255,0.12);color:#9b8fff;border:1px solid rgba(108,99,255,0.25);"' : '';
+  const sectionClass = platform === 'favorite' ? 'platform-section favorite-section fade-in' : 'platform-section fade-in';
   return `
-    <div class="platform-section fade-in">
+    <div class="${sectionClass}">
       <div class="platform-label">
         <span class="logo-badge ${badgeClass}" ${badgeStyle}>${label}</span>
         ${linkHtml}
@@ -1317,8 +1428,10 @@ function openEditFromButton(event, platform, day, id, isCustom) {
 }
 
 function renderCard(w, platform, dayKey) {
-  const cardId = w.custom ? w.id : (w._jsonId || `${platform}__${dayKey}__${getItemId(w, platform, dayKey)}`);
+  const actualPlatform = w._plat || platform;
+  const cardId = getRenderItemId(w, actualPlatform, dayKey);
   const isCustom = !!w.custom;
+  const isFav = isFavoriteId(cardId);
   const title = escapeHtml(w.title || '제목 없음');
   const author = escapeHtml(w.author || '');
   const genre = escapeHtml(w.genre || '');
@@ -1326,10 +1439,12 @@ function renderCard(w, platform, dayKey) {
   const thumb = w.thumb ? escapeAttr(w.thumb) : '';
   const url = escapeAttr(w.url || '');
 
-  const delAction = escapeAttr(`openDelFromButton(event, ${JSON.stringify(platform)}, ${JSON.stringify(dayKey)}, ${JSON.stringify(cardId)}, ${JSON.stringify(w.title || '')}, ${isCustom})`);
-  const editAction = escapeAttr(`openEditFromButton(event, ${JSON.stringify(platform)}, ${JSON.stringify(dayKey)}, ${JSON.stringify(cardId)}, ${isCustom})`);
+  const delAction = escapeAttr(`openDelFromButton(event, ${JSON.stringify(actualPlatform)}, ${JSON.stringify(dayKey)}, ${JSON.stringify(cardId)}, ${JSON.stringify(w.title || '')}, ${isCustom})`);
+  const editAction = escapeAttr(`openEditFromButton(event, ${JSON.stringify(actualPlatform)}, ${JSON.stringify(dayKey)}, ${JSON.stringify(cardId)}, ${isCustom})`);
+  const favAction = escapeAttr(`toggleFavoriteById(event, ${JSON.stringify(cardId)}, ${JSON.stringify(w.title || '')})`);
   const delBtn = `<button type="button" class="card-delete-btn" onclick="${delAction}" aria-label="삭제">×</button>`;
   const editBtn = `<button type="button" class="card-edit-btn" onclick="${editAction}" title="수정" aria-label="수정">✎</button>`;
+  const favBtn = `<button type="button" class="card-fav-btn ${isFav ? 'active' : ''}" onclick="${favAction}" title="즐겨찾기" aria-label="즐겨찾기">★</button>`;
   const customBadge = isCustom ? `<div class="card-custom-badge">내 추가</div>` : '';
 
   const thumbContent = thumb
@@ -1340,6 +1455,7 @@ function renderCard(w, platform, dayKey) {
     <div class="webtoon-card">
       ${delBtn}
       ${editBtn}
+      ${favBtn}
       <div class="card-open-area" role="link" tabindex="0" data-url="${url}"
         onclick="openWebtoonFromElement(this)"
         onkeydown="handleOpenKey(event, this)">
@@ -1347,7 +1463,7 @@ function renderCard(w, platform, dayKey) {
           ${thumbContent}
           ${w.isNew ? '<div class="card-new-badge">NEW</div>' : ''}
           ${customBadge}
-          <div class="card-platform-dot ${platform}"></div>
+          <div class="card-platform-dot ${actualPlatform}"></div>
         </div>
         <div class="card-info">
           <div class="card-title">${title}</div>
