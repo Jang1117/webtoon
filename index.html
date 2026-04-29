@@ -1274,8 +1274,8 @@ function renderCard(w, platform, dayKey) {
   const safeTitle = escapeJsString(w.title);
   const safeUrl = escapeJsString(w.url);
   const isCustom = !!w.custom;
-  const delBtn = `<button class="card-delete-btn" onclick="event.preventDefault(); event.stopPropagation(); openDel('${platform}','${dayKey}',${JSON.stringify(cardId)},'${safeTitle}',${isCustom})">×</button>`;
-  const editBtn = `<button class="card-edit-btn" onclick="event.preventDefault(); event.stopPropagation(); openEdit('${platform}','${dayKey}',${JSON.stringify(cardId)},event,${isCustom})" title="수정">✎</button>`;
+  const delBtn = `<button type="button" class="card-delete-btn" onclick="event.preventDefault(); event.stopPropagation(); event.stopImmediatePropagation(); openDel('${platform}','${dayKey}',${JSON.stringify(cardId)},'${safeTitle}',${isCustom})">×</button>`;
+  const editBtn = `<button type="button" class="card-edit-btn" onclick="event.preventDefault(); event.stopPropagation(); event.stopImmediatePropagation(); openEdit('${platform}','${dayKey}',${JSON.stringify(cardId)},event,${isCustom})" title="수정">✎</button>`;
   const customBadge = isCustom ? `<div class="card-custom-badge">내 추가</div>` : '';
   const title = escapeHtml(w.title || '제목 없음');
   const author = escapeHtml(w.author || '');
@@ -1289,8 +1289,8 @@ function renderCard(w, platform, dayKey) {
 
   return `
     <div class="webtoon-card" role="link" tabindex="0"
-      onclick="window.open('${safeUrl}', '_blank', 'noopener')"
-      onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); window.open('${safeUrl}', '_blank', 'noopener'); }">
+      onclick="handleCardClick(event, '${safeUrl}')"
+      onkeydown="handleCardKeydown(event, '${safeUrl}')">
       <div class="card-thumb" style="position:relative;">
         ${thumbContent}
         ${delBtn}
@@ -1306,6 +1306,20 @@ function renderCard(w, platform, dayKey) {
       </div>
     </div>
   `;
+}
+
+
+function handleCardClick(event, url) {
+  if (event.target.closest('button')) return;
+  window.open(url, '_blank', 'noopener');
+}
+
+function handleCardKeydown(event, url) {
+  if (event.target.closest('button')) return;
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    window.open(url, '_blank', 'noopener');
+  }
 }
 
 function showToast(msg) {
