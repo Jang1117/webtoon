@@ -1332,10 +1332,151 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 2500);
 }
 
+
+// ── 카카오 JSON 파일 로드: kakao-webtoon-mon.json ... kakao-webtoon-finished.json
+let kakaoLoadStatus = 'loading';
+kakaoData.finished = [];
+
+const KAKAO_JSON_FILES = {
+  mon: 'kakao-webtoon-mon.json',
+  tue: 'kakao-webtoon-tue.json',
+  wed: 'kakao-webtoon-wed.json',
+  thu: 'kakao-webtoon-thu.json',
+  fri: 'kakao-webtoon-fri.json',
+  sat: 'kakao-webtoon-sat.json',
+  sun: 'kakao-webtoon-sun.json',
+  finished: 'kakao-webtoon-finished.json',
+};
+
+const KAKAO_DAY_LABELS = {
+  mon: '월', tue: '화', wed: '수', thu: '목', fri: '금', sat: '토', sun: '일', finished: '완결'
+};
+
+function getArrayFromKakaoJson(raw, key) {
+  if (!raw) return [];
+  if (raw.kakao && Array.isArray(raw.kakao[key])) return raw.kakao[key];
+  if (raw.platforms && raw.platforms.kakao && raw.platforms.kakao.weekday && Array.isArray(raw.platforms.kakao.weekday[key])) return raw.platforms.kakao.weekday[key];
+  if (raw.platforms && raw.platforms.kakao && key === FINISHED_KEY && Array.isArray(raw.platforms.kakao.finished)) return raw.platforms.kakao.finished;
+  if (Array.isArray(raw[key])) return raw[key];
+  if (key === FINISHED_KEY && Array.isArray(raw.finished)) return raw.finished;
+  if (Array.isArray(raw.items)) return raw.items;
+  if (Array.isArray(raw)) return raw;
+  return [];
+}
+
+function normalizeKakaoItems(raw, key) {
+  const list = getArrayFromKakaoJson(raw, key);
+  return list
+    .filter(item => item && item.title && item.url)
+    .map((item, idx) => {
+      const title = item.title || item.titleName || '제목 없음';
+      const isFinished = key === FINISHED_KEY;
+      return {
+        title,
+        url: item.url,
+        thumb: item.thumb || item.thumbnail || item.thumbnailUrl || item.imageUrl || '',
+        author: item.author || (isFinished ? '카카오 완결' : '카카오 웹툰'),
+        genre: item.genre || (isFinished ? '완결' : '카카오'),
+        emoji: item.emoji || '📚',
+        isNew: !!item.isNew,
+        platform: 'kakao',
+        day: key,
+        dayLabel: KAKAO_DAY_LABELS[key] || '',
+        section: isFinished ? 'finished' : undefined,
+        sectionLabel: isFinished ? '완결' : undefined,
+        status: isFinished ? 'finished' : (item.status || 'weekday'),
+        _jsonId: item.id || item.titleId || item.contentId || item.url || `json__kakao__${key}__${idx}__${title}`
+      };
+    });
+}
+
+async function loadKakaoJsonData() {
+  let successCount = 0;
+  await Promise.all(Object.entries(KAKAO_JSON_FILES).map(async ([key, file]) => {
+    try {
+      const response = await fetch(file, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const raw = await response.json();
+      kakaoData[key] = normalizeKakaoItems(raw, key);
+      successCount += 1;
+    } catch (error) {
+      kakaoData[key] = [];
+      console.warn(`${file} 로드 실패: 해당 카카오 목록은 비워둡니다.`, error);
+    }
+  }));
+  kakaoLoadStatus = successCount > 0 ? `external(${successCount}/8)` : 'failed';
+}
+
+// 기존 완결 렌더링을 덮어써서 네이버 + 카카오 완결을 같이 표시합니다.
+renderFinishedContent = function() {
+  const main = document.getElementById('main');
+  const deleted = customData._deleted || [];
+  const overrides = customData._overrides || {};
+  const naverSourceLabel = finishedLoadStatus === 'external' ? '네이버 완결 JSON' : finishedLoadStatus === 'fallback' ? '네이버 완결 내장 JSON' : finishedLoadStatus === 'loading' ? '네이버 불러오는 중' : '네이버 완결 JSON 실패';
+  const kakaoSourceLabel = kakaoLoadStatus.startsWith('external') ? '카카오 JSON' : kakaoLoadStatus === 'loading' ? '카카오 불러오는 중' : '카카오 JSON 없음';
+
+  function applyFinished(list, plat) {
+    return list
+      .map(w => {
+        const id = w._builtinId || `builtin__${plat}__finished__${w.title}`;
+        if (deleted.includes(id)) return null;
+        const ov = overrides[id];
+        return { ...(ov ? { ...w, ...ov } : w), _plat: plat, custom: false, _builtinId: id };
+      })
+      .filter(Boolean);
+  }
+
+  const naverList = activePlatforms.naver ? applyFinished(naverFinishedData || [], 'naver') : [];
+  const kakaoList = activePlatforms.kakao ? applyFinished(kakaoData.finished || [], 'kakao') : [];
+  const total = naverList.length + kakaoList.length;
+
+  let html = `
+    <div class="section-header fade-in">
+      <h2 class="section-title">완결 웹툰</h2>
+      <div class="count-badge">${naverSourceLabel} / ${kakaoSourceLabel} · 총 ${total}작품</div>
+    </div>
+  `;
+
+  if (total === 0) {
+    html += `<div class="empty-state fade-in"><div class="icon">😶</div><p>완결 웹툰이 없습니다. naver-finished-webtoon.json 또는 kakao-webtoon-finished.json 파일을 확인해주세요.</p></div>`;
+    main.innerHTML = html;
+    return;
+  }
+
+  if (naverList.length > 0) {
+    html += `
+      <div class="platform-section fade-in">
+        <div class="platform-label">
+          <span class="logo-badge naver">🟢 NAVER 완결 웹툰</span>
+          <a href="https://comic.naver.com/webtoon?tab=finish" target="_blank" class="platform-link">전체 보기 →</a>
+        </div>
+        <div class="webtoon-grid">
+          ${naverList.map(w => renderCard(w, 'naver', FINISHED_KEY)).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  if (kakaoList.length > 0) {
+    html += `
+      <div class="platform-section fade-in">
+        <div class="platform-label">
+          <span class="logo-badge kakao">🟡 KAKAO 완결 웹툰</span>
+          <a href="https://webtoon.kakao.com/" target="_blank" class="platform-link">전체 보기 →</a>
+        </div>
+        <div class="webtoon-grid">
+          ${kakaoList.map(w => renderCard(w, 'kakao', FINISHED_KEY)).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  main.innerHTML = html;
+};
 // ── 초기화
 async function init() {
   renderDayTabs();
-  await Promise.all([loadNaverJsonData(), loadNaverFinishedJsonData()]);
+  await Promise.all([loadNaverJsonData(), loadNaverFinishedJsonData(), loadKakaoJsonData()]);
   renderContent();
 }
 init();
