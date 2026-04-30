@@ -694,6 +694,82 @@
     .search-box { border-radius: 12px; }
   }
 
+
+  /* ── MOBILE HEADER / MENU FIX ── */
+  @media (max-width: 600px) {
+    header { padding: 0 10px; }
+
+    .header-inner {
+      height: auto;
+      min-height: 58px;
+      gap: 10px;
+      padding: 8px 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .header-inner::-webkit-scrollbar { display: none; }
+
+    .logo {
+      font-size: 18px;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
+    .platform-filter {
+      margin-left: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 6px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      flex: 1 0 auto;
+      min-width: max-content;
+    }
+    .platform-filter::-webkit-scrollbar { display: none; }
+
+    .plat-btn,
+    .theme-toggle {
+      flex: 0 0 auto;
+      white-space: nowrap;
+      word-break: keep-all;
+      writing-mode: horizontal-tb;
+      text-orientation: mixed;
+      padding: 8px 11px;
+      min-height: 36px;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .day-tabs {
+      overflow-x: auto;
+      overflow-y: hidden;
+      flex-wrap: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .day-tabs::-webkit-scrollbar { display: none; }
+
+    .day-tab {
+      flex: 0 0 auto;
+      min-width: 54px;
+      white-space: nowrap;
+      word-break: keep-all;
+      writing-mode: horizontal-tb;
+      text-orientation: mixed;
+      padding: 9px 10px;
+      line-height: 1.2;
+    }
+
+    .search-wrap { width: 100%; box-sizing: border-box; }
+    .search-box { width: 100%; min-width: 0; }
+    .search-input { min-width: 0; font-size: 14px; }
+    .search-clear { flex: 0 0 auto; white-space: nowrap; }
+  }
+
   /* ── SELECT OPTION LIGHT ── */
   :root.light select.form-input option { background: #FFFFFF; color: #18181F; }
   :root.light .form-input { background: #EEEEF4; border-color: rgba(0,0,0,0.1); color: #18181F; }
