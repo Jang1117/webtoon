@@ -459,6 +459,17 @@
     color: #fff;
   }
 
+  .plat-btn.reset-btn {
+    border-color: rgba(255,255,255,0.12);
+    color: var(--text-muted);
+    background: var(--surface);
+  }
+  .plat-btn.reset-btn:hover {
+    border-color: rgba(255,205,0,0.45);
+    color: var(--text);
+    background: rgba(255,205,0,0.08);
+  }
+
   .form-group { display: flex; flex-direction: column; gap: 6px; }
   .form-label { font-size: 12px; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
   .form-input {
@@ -617,6 +628,60 @@
     color: #3C1E1E;
   }
 
+
+  /* ── SEARCH ── */
+  .search-wrap {
+    max-width: 1200px;
+    margin: 14px auto 0;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 8px 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+  .search-box .search-icon { color: var(--text-muted); font-size: 15px; }
+  .search-input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    padding: 6px 2px;
+  }
+  .search-input::placeholder { color: var(--text-muted); }
+  .search-clear {
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text-muted);
+    border-radius: 999px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+  }
+  .search-clear:hover { color: var(--text); border-color: rgba(108,99,255,0.45); }
+  .search-note {
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+    min-height: 18px;
+  }
+  @media (max-width: 600px) {
+    .search-wrap { padding: 0 16px; margin-top: 10px; }
+    .search-box { border-radius: 12px; }
+  }
+
   /* ── SELECT OPTION LIGHT ── */
   :root.light select.form-input option { background: #FFFFFF; color: #18181F; }
   :root.light .form-input { background: #EEEEF4; border-color: rgba(0,0,0,0.1); color: #18181F; }
@@ -647,12 +712,22 @@
         <span class="dot" style="background:var(--kakao)"></span> 카카오
       </button>
       <button class="plat-btn add-btn" onclick="openModal()">＋ 추가</button>
+      <button class="plat-btn reset-btn" onclick="resetDeletedItems()" title="삭제한 기본 웹툰 다시 보이기">↺ 삭제 초기화</button>
       <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙 다크</button>
     </div>
   </div>
 </header>
 
 <div class="day-tabs" id="dayTabs"></div>
+
+<div class="search-wrap">
+  <div class="search-box">
+    <span class="search-icon">🔎</span>
+    <input id="searchInput" class="search-input" type="search" placeholder="전체 요일/완결에서 제목 검색" oninput="handleSearchInput(this.value)" />
+    <button type="button" class="search-clear" onclick="clearSearch()">초기화</button>
+  </div>
+  <div id="searchNote" class="search-note"></div>
+</div>
 
 <main id="main">
   <div class="loading-state"><div class="spinner"></div> 웹툰 정보를 불러오는 중...</div>
@@ -808,6 +883,7 @@ const DAY_LABELS = { mon: '월', tue: '화', wed: '수', thu: '목', fri: '금',
 const todayIdx = (new Date().getDay() + 6) % 7;
 let selectedDay = todayIdx;
 let activePlatforms = { naver: true, kakao: true };
+let searchQuery = '';
 let dataLoadStatus = 'loading';
 let loadMessages = [];
 
@@ -1070,6 +1146,22 @@ function confirmDel() {
   showToast('삭제되었습니다.');
 }
 
+function resetDeletedItems() {
+  const count = Array.isArray(customData._deleted) ? customData._deleted.length : 0;
+  if (count === 0) {
+    showToast('초기화할 삭제 항목이 없습니다.');
+    return;
+  }
+
+  const ok = confirm(`삭제 처리한 기본 웹툰 ${count}개를 다시 보이게 할까요?\n직접 추가했다가 삭제한 웹툰은 복구되지 않습니다.`);
+  if (!ok) return;
+
+  customData._deleted = [];
+  saveCustomData();
+  renderContent();
+  showToast('삭제 초기화 완료! 기본 웹툰이 다시 표시됩니다.');
+}
+
 // ── 테마 토글
 function toggleTheme() {
   const root = document.documentElement;
@@ -1220,6 +1312,19 @@ function getRenderItemId(w, platform, key, index = 0) {
   return w.custom ? w.id : (w._jsonId || `${actualPlatform}__${key}__${getItemId(w, actualPlatform, key, index)}`);
 }
 
+function normalizeFavoriteTitle(title) {
+  return String(title || '')
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, '')
+    .replace(/[\u200B-\u200D\uFEFF]/g, '');
+}
+
+function getTitleFavKey(title) {
+  const normalized = normalizeFavoriteTitle(title);
+  return normalized ? `title::${normalized}` : '';
+}
+
 function getFavorites() {
   return Array.isArray(customData._favorites) ? customData._favorites : [];
 }
@@ -1228,17 +1333,30 @@ function isFavoriteId(id) {
   return getFavorites().includes(String(id));
 }
 
-function toggleFavoriteById(event, id, title) {
+function isFavoriteTitle(title) {
+  const key = getTitleFavKey(title);
+  return !!key && getFavorites().includes(key);
+}
+
+function isFavoriteItem(item, platform, key) {
+  return isFavoriteTitle(item?.title) || isFavoriteId(getRenderItemId(item, platform, key));
+}
+
+function toggleFavoriteByTitle(event, id, title) {
   stopCardButtonEvent(event);
   const favId = String(id);
+  const titleKey = getTitleFavKey(title);
   if (!customData._favorites) customData._favorites = [];
-  const idx = customData._favorites.indexOf(favId);
-  if (idx === -1) {
-    customData._favorites.push(favId);
-    showToast(`"${title}" 즐겨찾기 추가`);
-  } else {
-    customData._favorites.splice(idx, 1);
+
+  const hasTitleFavorite = titleKey && customData._favorites.includes(titleKey);
+  const hasLegacyIdFavorite = customData._favorites.includes(favId);
+
+  if (hasTitleFavorite || hasLegacyIdFavorite) {
+    customData._favorites = customData._favorites.filter(v => v !== titleKey && v !== favId);
     showToast(`"${title}" 즐겨찾기 해제`);
+  } else {
+    customData._favorites.push(titleKey || favId);
+    showToast(`"${title}" 즐겨찾기 추가`);
   }
   saveCustomData();
   renderContent();
@@ -1246,8 +1364,8 @@ function toggleFavoriteById(event, id, title) {
 
 function favoriteFirst(list, platform, key) {
   return (list || []).slice().sort((a, b) => {
-    const aFav = isFavoriteId(getRenderItemId(a, platform, key)) ? 1 : 0;
-    const bFav = isFavoriteId(getRenderItemId(b, platform, key)) ? 1 : 0;
+    const aFav = isFavoriteItem(a, platform, key) ? 1 : 0;
+    const bFav = isFavoriteItem(b, platform, key) ? 1 : 0;
     return bFav - aFav;
   });
 }
@@ -1256,10 +1374,92 @@ function splitFavorites(list, platform, key) {
   const favorites = [];
   const normal = [];
   for (const item of list || []) {
-    if (isFavoriteId(getRenderItemId(item, platform, key))) favorites.push(item);
+    if (isFavoriteItem(item, platform, key)) favorites.push(item);
     else normal.push(item);
   }
   return { favorites, normal };
+}
+
+function normalizeSearchText(value) {
+  return String(value || '').trim().toLowerCase();
+}
+
+function webtoonMatchesSearch(item, query) {
+  const q = normalizeSearchText(query);
+  if (!q) return true;
+  // JSON에 작가/장르 데이터가 없는 경우가 많으므로 검색은 제목 기준으로만 수행합니다.
+  return normalizeSearchText(item?.title).includes(q);
+}
+
+function filterBySearch(list) {
+  return (list || []).filter(item => webtoonMatchesSearch(item, searchQuery));
+}
+
+function handleSearchInput(value) {
+  searchQuery = value || '';
+  renderContent();
+}
+
+function clearSearch() {
+  searchQuery = '';
+  const input = document.getElementById('searchInput');
+  if (input) input.value = '';
+  renderContent();
+}
+
+function updateSearchNote(totalBefore, totalAfter, tabLabel) {
+  const note = document.getElementById('searchNote');
+  if (!note) return;
+  const q = searchQuery.trim();
+  if (!q) {
+    note.textContent = '';
+    return;
+  }
+  note.textContent = `"${q}" 제목 검색 결과: ${tabLabel} ${totalBefore}개 중 ${totalAfter}개 표시`;
+}
+
+function withRenderMeta(list, platform, key) {
+  return (list || []).map(item => ({ ...item, _plat: item._plat || platform, _dayKey: key }));
+}
+
+function collectAllVisibleItems() {
+  const items = [];
+  for (const day of DAY_KEYS) {
+    if (activePlatforms.naver) items.push(...withRenderMeta(applySavedChanges(dataStore.naver[day] || [], 'naver', day), 'naver', day));
+    if (activePlatforms.kakao) items.push(...withRenderMeta(applySavedChanges(dataStore.kakao[day] || [], 'kakao', day), 'kakao', day));
+    if (activePlatforms.naver) items.push(...withRenderMeta(customList('naver', day), 'naver', day));
+    if (activePlatforms.kakao) items.push(...withRenderMeta(customList('kakao', day), 'kakao', day));
+    items.push(...withRenderMeta(customList('other', day), 'other', day));
+  }
+  return items;
+}
+
+function renderSearchContent() {
+  const main = document.getElementById('main');
+  const allItems = collectAllVisibleItems();
+  const matched = filterBySearch(allItems);
+  const split = splitFavorites(matched, 'search', 'all');
+  const favoriteList = favoriteFirst(split.favorites, 'favorite', 'all');
+  const normalList = favoriteFirst(split.normal, 'search', 'all');
+  const total = matched.length;
+  updateSearchNote(allItems.length, total, '전체 요일/완결에서');
+
+  let html = `
+    <div class="section-header fade-in">
+      <h2 class="section-title">전체 검색 결과</h2>
+      <div class="count-badge">총 ${total}작품</div>
+    </div>
+  `;
+
+  if (total === 0) {
+    html += `<div class="empty-state fade-in"><div class="icon">🔎</div><p>제목 검색 결과가 없습니다.</p></div>`;
+    main.innerHTML = html;
+    return;
+  }
+
+  if (favoriteList.length > 0) html += renderPlatformSection('favorite', '⭐ 즐겨찾기 검색 결과', '', favoriteList, 'all');
+  if (normalList.length > 0) html += renderPlatformSection('search', '🔎 전체 검색 결과', '', normalList, 'all');
+  main.innerHTML = html;
 }
 
 function applySavedChanges(list, platform, key) {
@@ -1281,6 +1481,7 @@ function customList(platform, key) {
 
 function renderContent() {
   if (dataLoadStatus === 'loading') { renderLoading(); return; }
+  if (searchQuery.trim()) { renderSearchContent(); return; }
 
   const key = DAY_KEYS[selectedDay];
   if (key === FINISHED_KEY) {
@@ -1291,15 +1492,20 @@ function renderContent() {
   const main = document.getElementById('main');
   const dayName = DAYS[selectedDay];
 
-  const naverAll = activePlatforms.naver ? [
+  const naverRaw = activePlatforms.naver ? [
     ...applySavedChanges(dataStore.naver[key] || [], 'naver', key),
     ...customList('naver', key)
   ] : [];
-  const kakaoAll = activePlatforms.kakao ? [
+  const kakaoRaw = activePlatforms.kakao ? [
     ...applySavedChanges(dataStore.kakao[key] || [], 'kakao', key),
     ...customList('kakao', key)
   ] : [];
-  const otherAll = customList('other', key);
+  const otherRaw = customList('other', key);
+  const totalBeforeSearch = naverRaw.length + kakaoRaw.length + otherRaw.length;
+
+  const naverAll = filterBySearch(naverRaw);
+  const kakaoAll = filterBySearch(kakaoRaw);
+  const otherAll = filterBySearch(otherRaw);
 
   const naverSplit = splitFavorites(naverAll, 'naver', key);
   const kakaoSplit = splitFavorites(kakaoAll, 'kakao', key);
@@ -1314,6 +1520,7 @@ function renderContent() {
   const otherList = otherSplit.normal;
 
   const total = naverAll.length + kakaoAll.length + otherAll.length;
+  updateSearchNote(totalBeforeSearch, total, `${dayName}요일`);
 
   let html = `
     <div class="section-header fade-in">
@@ -1323,7 +1530,7 @@ function renderContent() {
   `;
 
   if (total === 0) {
-    html += `<div class="empty-state fade-in"><div class="icon">😶</div><p>표시할 웹툰이 없습니다. JSON 파일명과 구조를 확인해주세요.</p></div>`;
+    html += `<div class="empty-state fade-in"><div class="icon">😶</div><p>${searchQuery.trim() ? '검색 결과가 없습니다.' : '표시할 웹툰이 없습니다. JSON 파일명과 구조를 확인해주세요.'}</p></div>`;
     main.innerHTML = html;
     return;
   }
@@ -1338,14 +1545,18 @@ function renderContent() {
 
 function renderFinishedContent() {
   const main = document.getElementById('main');
-  const naverAll = activePlatforms.naver ? applySavedChanges(dataStore.naver.finished || [], 'naver', FINISHED_KEY) : [];
-  const kakaoAll = activePlatforms.kakao ? applySavedChanges(dataStore.kakao.finished || [], 'kakao', FINISHED_KEY) : [];
+  const naverRaw = activePlatforms.naver ? applySavedChanges(dataStore.naver.finished || [], 'naver', FINISHED_KEY) : [];
+  const kakaoRaw = activePlatforms.kakao ? applySavedChanges(dataStore.kakao.finished || [], 'kakao', FINISHED_KEY) : [];
+  const totalBeforeSearch = naverRaw.length + kakaoRaw.length;
+  const naverAll = filterBySearch(naverRaw);
+  const kakaoAll = filterBySearch(kakaoRaw);
   const naverSplit = splitFavorites(naverAll, 'naver', FINISHED_KEY);
   const kakaoSplit = splitFavorites(kakaoAll, 'kakao', FINISHED_KEY);
   const favoriteList = favoriteFirst([...naverSplit.favorites, ...kakaoSplit.favorites], 'favorite', FINISHED_KEY);
   const naverList = naverSplit.normal;
   const kakaoList = kakaoSplit.normal;
   const total = naverAll.length + kakaoAll.length;
+  updateSearchNote(totalBeforeSearch, total, '완결');
 
   let html = `
     <div class="section-header fade-in">
@@ -1355,7 +1566,7 @@ function renderFinishedContent() {
   `;
 
   if (total === 0) {
-    html += `<div class="empty-state fade-in"><div class="icon">✅</div><p>완결 웹툰 JSON을 찾지 못했거나 데이터가 없습니다.</p></div>`;
+    html += `<div class="empty-state fade-in"><div class="icon">✅</div><p>${searchQuery.trim() ? '검색 결과가 없습니다.' : '완결 웹툰 JSON을 찾지 못했거나 데이터가 없습니다.'}</p></div>`;
     main.innerHTML = html;
     return;
   }
@@ -1370,7 +1581,7 @@ function renderFinishedContent() {
 function renderPlatformSection(platform, label, link, list, key) {
   const linkHtml = link ? `<a href="${link}" target="_blank" class="platform-link">전체 보기 →</a>` : '';
   const badgeClass = platform === 'naver' ? 'naver' : platform === 'kakao' ? 'kakao' : platform === 'favorite' ? 'favorite' : '';
-  const badgeStyle = platform === 'other' ? 'style="background:rgba(108,99,255,0.12);color:#9b8fff;border:1px solid rgba(108,99,255,0.25);"' : '';
+  const badgeStyle = (platform === 'other' || platform === 'search') ? 'style="background:rgba(108,99,255,0.12);color:#9b8fff;border:1px solid rgba(108,99,255,0.25);"' : '';
   const sectionClass = platform === 'favorite' ? 'platform-section favorite-section fade-in' : 'platform-section fade-in';
   return `
     <div class="${sectionClass}">
@@ -1379,7 +1590,7 @@ function renderPlatformSection(platform, label, link, list, key) {
         ${linkHtml}
       </div>
       <div class="webtoon-grid">
-        ${list.map(w => renderCard(w, platform, key)).join('')}
+        ${list.map(w => renderCard(w, platform, w._dayKey || key)).join('')}
       </div>
     </div>
   `;
@@ -1431,17 +1642,18 @@ function renderCard(w, platform, dayKey) {
   const actualPlatform = w._plat || platform;
   const cardId = getRenderItemId(w, actualPlatform, dayKey);
   const isCustom = !!w.custom;
-  const isFav = isFavoriteId(cardId);
+  const isFav = isFavoriteItem(w, actualPlatform, dayKey);
   const title = escapeHtml(w.title || '제목 없음');
   const author = escapeHtml(w.author || '');
   const genre = escapeHtml(w.genre || '');
+  const dayDisplay = escapeHtml(DAY_LABELS[w._dayKey || dayKey] ? `${DAY_LABELS[w._dayKey || dayKey]}${(w._dayKey || dayKey) === FINISHED_KEY ? '' : '요일'}` : '');
   const emoji = escapeHtml(w.emoji || '📚');
   const thumb = w.thumb ? escapeAttr(w.thumb) : '';
   const url = escapeAttr(w.url || '');
 
   const delAction = escapeAttr(`openDelFromButton(event, ${JSON.stringify(actualPlatform)}, ${JSON.stringify(dayKey)}, ${JSON.stringify(cardId)}, ${JSON.stringify(w.title || '')}, ${isCustom})`);
   const editAction = escapeAttr(`openEditFromButton(event, ${JSON.stringify(actualPlatform)}, ${JSON.stringify(dayKey)}, ${JSON.stringify(cardId)}, ${isCustom})`);
-  const favAction = escapeAttr(`toggleFavoriteById(event, ${JSON.stringify(cardId)}, ${JSON.stringify(w.title || '')})`);
+  const favAction = escapeAttr(`toggleFavoriteByTitle(event, ${JSON.stringify(cardId)}, ${JSON.stringify(w.title || '')})`);
   const delBtn = `<button type="button" class="card-delete-btn" onclick="${delAction}" aria-label="삭제">×</button>`;
   const editBtn = `<button type="button" class="card-edit-btn" onclick="${editAction}" title="수정" aria-label="수정">✎</button>`;
   const favBtn = `<button type="button" class="card-fav-btn ${isFav ? 'active' : ''}" onclick="${favAction}" title="즐겨찾기" aria-label="즐겨찾기">★</button>`;
@@ -1468,7 +1680,7 @@ function renderCard(w, platform, dayKey) {
         <div class="card-info">
           <div class="card-title">${title}</div>
           ${author ? `<div class="card-author">${author}</div>` : ''}
-          ${genre ? `<div class="card-tags"><span class="card-tag">${genre}</span></div>` : ''}
+          ${(genre || dayDisplay) ? `<div class="card-tags">${dayDisplay ? `<span class="card-tag">${dayDisplay}</span>` : ''}${genre && genre !== dayDisplay ? `<span class="card-tag">${genre}</span>` : ''}</div>` : ''}
         </div>
       </div>
     </div>
