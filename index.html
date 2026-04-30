@@ -470,6 +470,18 @@
     background: rgba(255,205,0,0.08);
   }
 
+
+  .plat-btn.favorite-io-btn {
+    border-color: rgba(255,205,0,0.38);
+    color: #c9a000;
+    background: rgba(255,205,0,0.08);
+  }
+  .plat-btn.favorite-io-btn:hover {
+    border-color: rgba(255,205,0,0.68);
+    color: #fff;
+    background: rgba(255,205,0,0.16);
+  }
+
   .form-group { display: flex; flex-direction: column; gap: 6px; }
   .form-label { font-size: 12px; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
   .form-input {
@@ -713,6 +725,9 @@
       </button>
       <button class="plat-btn add-btn" onclick="openModal()">＋ 추가</button>
       <button class="plat-btn reset-btn" onclick="resetDeletedItems()" title="삭제한 기본 웹툰 다시 보이기">↺ 삭제 초기화</button>
+      <button class="plat-btn favorite-io-btn" onclick="exportFavorites()" title="즐겨찾기 데이터를 JSON 파일로 저장">★ 저장</button>
+      <button class="plat-btn favorite-io-btn" onclick="openFavoriteImport()" title="저장한 즐겨찾기 JSON 파일 불러오기">★ 불러오기</button>
+      <input type="file" id="favoriteImportInput" accept="application/json,.json" style="display:none" onchange="importFavoritesFromFile(event)" />
       <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙 다크</button>
     </div>
   </div>
@@ -1327,6 +1342,80 @@ function getTitleFavKey(title) {
 
 function getFavorites() {
   return Array.isArray(customData._favorites) ? customData._favorites : [];
+}
+
+
+function uniqueStringList(values) {
+  return [...new Set((values || []).map(v => String(v || '').trim()).filter(Boolean))];
+}
+
+function exportFavorites() {
+  const favorites = uniqueStringList(getFavorites());
+  const payload = {
+    type: 'webtoon-favorites',
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    favorites
+  };
+
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const date = new Date().toISOString().slice(0, 10);
+  a.href = url;
+  a.download = `webtoon-favorites-${date}.json`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+  showToast(`즐겨찾기 ${favorites.length}개를 저장했습니다.`);
+}
+
+function openFavoriteImport() {
+  const input = document.getElementById('favoriteImportInput');
+  if (!input) return;
+  input.value = '';
+  input.click();
+}
+
+function normalizeImportedFavorites(json) {
+  if (Array.isArray(json)) return uniqueStringList(json);
+  if (json && Array.isArray(json.favorites)) return uniqueStringList(json.favorites);
+  if (json && json.customData && Array.isArray(json.customData._favorites)) return uniqueStringList(json.customData._favorites);
+  if (json && Array.isArray(json._favorites)) return uniqueStringList(json._favorites);
+  return null;
+}
+
+function importFavoritesFromFile(event) {
+  const input = event && event.target;
+  const file = input && input.files && input.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const json = JSON.parse(String(reader.result || ''));
+      const favorites = normalizeImportedFavorites(json);
+      if (!favorites) {
+        showToast('즐겨찾기 JSON 형식이 아닙니다.');
+        return;
+      }
+      customData._favorites = favorites;
+      saveCustomData();
+      renderContent();
+      showToast(`즐겨찾기 ${favorites.length}개를 불러왔습니다.`);
+    } catch (error) {
+      console.error(error);
+      showToast('JSON 파일을 읽지 못했습니다.');
+    } finally {
+      if (input) input.value = '';
+    }
+  };
+  reader.onerror = () => {
+    showToast('파일을 읽지 못했습니다.');
+    if (input) input.value = '';
+  };
+  reader.readAsText(file, 'utf-8');
 }
 
 function isFavoriteId(id) {
