@@ -973,7 +973,7 @@ const DAY_LABELS = { mon: '월', tue: '화', wed: '수', thu: '목', fri: '금',
 
 const todayIdx = (new Date().getDay() + 6) % 7;
 let selectedDay = todayIdx;
-let activePlatforms = { naver: true, kakao: true };
+let activePlatforms = { naver: true, kakao: false };
 let searchQuery = '';
 let dataLoadStatus = 'loading';
 let loadMessages = [];
