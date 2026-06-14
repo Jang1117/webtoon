@@ -125,11 +125,29 @@
   .plat-btn.active-kakao { border-color: var(--kakao); color: #c9a000; background: rgba(255,205,0,0.08); }
   .plat-btn:not([class*="active"]):hover { border-color: var(--border); color: var(--text); background: var(--surface2); }
 
+  /* ── DAY TABS WRAPPER (sticky) ── */
+  .day-tabs-wrapper {
+    position: sticky;
+    top: 64px; /* 기본 헤더 높이 */
+    z-index: 90;
+    background: rgba(10,10,15,0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s;
+  }
+  :root.light .day-tabs-wrapper {
+    background: rgba(244,244,248,0.93);
+  }
+  @media (max-width: 600px) {
+    .day-tabs-wrapper { top: 58px; }
+  }
+
   /* ── DAY TABS ── */
   .day-tabs {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 28px 24px 0;
+    padding: 10px 24px;
     display: flex;
     gap: 4px;
     position: relative;
@@ -761,6 +779,7 @@
       flex-wrap: nowrap;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
+      padding: 8px 16px;
     }
     .day-tabs::-webkit-scrollbar { display: none; }
 
@@ -820,7 +839,9 @@
   </div>
 </header>
 
+<div class="day-tabs-wrapper">
 <div class="day-tabs" id="dayTabs"></div>
+</div>
 
 <div class="search-wrap">
   <div class="search-box">
@@ -1401,6 +1422,12 @@ function selectDay(idx) {
   selectedDay = idx;
   renderDayTabs();
   renderContent();
+  // 선택된 탭이 보이도록 스크롤 (모바일)
+  const tabs = document.getElementById('dayTabs');
+  const activeTab = tabs && tabs.querySelector('.day-tab.active');
+  if (activeTab) {
+    activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
 }
 
 function togglePlatform(plat, btn) {
@@ -1872,6 +1899,64 @@ function showToast(msg) {
 
 renderDayTabs();
 loadAllJsonData();
+
+// ── 모바일 스와이프로 요일 변경
+(function() {
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchStartTime = 0;
+  const SWIPE_THRESHOLD = 50;   // 최소 이동 거리 (px)
+  const ANGLE_THRESHOLD = 35;   // 수평 판단 각도 (도)
+  const TIME_LIMIT = 400;       // 최대 제스처 시간 (ms)
+
+  function isMobile() {
+    return window.matchMedia('(max-width: 900px)').matches;
+  }
+
+  document.addEventListener('touchstart', function(e) {
+    // 모달이 열려 있으면 무시
+    const modals = ['modal', 'del-modal', 'edit-modal'];
+    if (modals.some(id => document.getElementById(id)?.style.display !== 'none')) return;
+
+    const t = e.touches[0];
+    touchStartX = t.clientX;
+    touchStartY = t.clientY;
+    touchStartTime = Date.now();
+  }, { passive: true });
+
+  document.addEventListener('touchend', function(e) {
+    if (!isMobile()) return;
+
+    // 모달이 열려 있으면 무시
+    const modals = ['modal', 'del-modal', 'edit-modal'];
+    if (modals.some(id => document.getElementById(id)?.style.display !== 'none')) return;
+
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStartX;
+    const dy = t.clientY - touchStartY;
+    const dt = Date.now() - touchStartTime;
+
+    if (dt > TIME_LIMIT) return;
+    if (Math.abs(dx) < SWIPE_THRESHOLD) return;
+
+    // 수평 스와이프인지 각도 확인
+    const angle = Math.abs(Math.atan2(Math.abs(dy), Math.abs(dx)) * 180 / Math.PI);
+    if (angle > ANGLE_THRESHOLD) return;
+
+    // 검색 입력 중이면 무시
+    if (document.activeElement && document.activeElement.id === 'searchInput') return;
+
+    if (dx < 0) {
+      // 왼쪽 스와이프 → 다음 요일
+      const next = (selectedDay + 1) % DAYS.length;
+      selectDay(next);
+    } else {
+      // 오른쪽 스와이프 → 이전 요일
+      const prev = (selectedDay - 1 + DAYS.length) % DAYS.length;
+      selectDay(prev);
+    }
+  }, { passive: true });
+})();
 </script>
 </body>
 </html>
