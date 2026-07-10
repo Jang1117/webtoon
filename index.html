@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>웹툰 시간표 — 네이버 & 카카오</title>
+<title>웹툰 시간표 — 네이버·카카오·레진코믹스·탑툰</title>
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --naver: #03C75A;
     --kakao: #FFCD00;
     --kakao-dark: #3C1E1E;
+    --lezhin: #FF3B54;
+    --toptoon: #FF8A00;
     --bg: #0A0A0F;
     --surface: #13131A;
     --surface2: #1C1C26;
@@ -123,31 +125,15 @@
 
   .plat-btn.active-naver { border-color: var(--naver); color: var(--naver); background: rgba(3,199,90,0.08); }
   .plat-btn.active-kakao { border-color: var(--kakao); color: #c9a000; background: rgba(255,205,0,0.08); }
+  .plat-btn.active-lezhin { border-color: var(--lezhin); color: var(--lezhin); background: rgba(255,59,84,0.08); }
+  .plat-btn.active-toptoon { border-color: var(--toptoon); color: var(--toptoon); background: rgba(255,138,0,0.08); }
   .plat-btn:not([class*="active"]):hover { border-color: var(--border); color: var(--text); background: var(--surface2); }
-
-  /* ── DAY TABS WRAPPER (sticky) ── */
-  .day-tabs-wrapper {
-    position: sticky;
-    top: 64px; /* 기본 헤더 높이 */
-    z-index: 90;
-    background: rgba(10,10,15,0.92);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border);
-    transition: background 0.3s;
-  }
-  :root.light .day-tabs-wrapper {
-    background: rgba(244,244,248,0.93);
-  }
-  @media (max-width: 600px) {
-    .day-tabs-wrapper { top: 58px; }
-  }
 
   /* ── DAY TABS ── */
   .day-tabs {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 24px;
+    padding: 28px 24px 0;
     display: flex;
     gap: 4px;
     position: relative;
@@ -261,6 +247,8 @@
 
   .logo-badge.naver { background: rgba(3,199,90,0.12); color: var(--naver); border: 1px solid rgba(3,199,90,0.25); }
   .logo-badge.kakao { background: rgba(255,205,0,0.12); color: #c9a000; border: 1px solid rgba(255,205,0,0.25); }
+  .logo-badge.lezhin { background: rgba(255,59,84,0.12); color: var(--lezhin); border: 1px solid rgba(255,59,84,0.25); }
+  .logo-badge.toptoon { background: rgba(255,138,0,0.12); color: var(--toptoon); border: 1px solid rgba(255,138,0,0.25); }
 
   .platform-link {
     font-size: 12px;
@@ -381,6 +369,8 @@
   }
   .card-platform-dot.naver { background: var(--naver); }
   .card-platform-dot.kakao { background: var(--kakao); }
+  .card-platform-dot.lezhin { background: var(--lezhin); }
+  .card-platform-dot.toptoon { background: var(--toptoon); }
 
   .card-new-badge {
     position: absolute;
@@ -779,7 +769,6 @@
       flex-wrap: nowrap;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding: 8px 16px;
     }
     .day-tabs::-webkit-scrollbar { display: none; }
 
@@ -829,6 +818,12 @@
       <button class="plat-btn" onclick="togglePlatform('kakao', this)">
         <span class="dot" style="background:var(--kakao)"></span> 카카오
       </button>
+      <button class="plat-btn" onclick="togglePlatform('lezhin', this)">
+        <span class="dot" style="background:var(--lezhin)"></span> 레진코믹스
+      </button>
+      <button class="plat-btn" onclick="togglePlatform('toptoon', this)">
+        <span class="dot" style="background:var(--toptoon)"></span> 탑툰
+      </button>
       <button class="plat-btn add-btn" onclick="openModal()">＋ 추가</button>
       <button class="plat-btn reset-btn" onclick="resetDeletedItems()" title="삭제한 기본 웹툰 다시 보이기">↺ 삭제 초기화</button>
       <button class="plat-btn favorite-io-btn" onclick="exportFavorites()" title="즐겨찾기 데이터를 JSON 파일로 저장">★ 저장</button>
@@ -839,9 +834,7 @@
   </div>
 </header>
 
-<div class="day-tabs-wrapper">
 <div class="day-tabs" id="dayTabs"></div>
-</div>
 
 <div class="search-wrap">
   <div class="search-box">
@@ -891,6 +884,8 @@
         <select id="inp-platform" class="form-input">
           <option value="naver">네이버 웹툰</option>
           <option value="kakao">카카오 웹툰</option>
+          <option value="lezhin">레진코믹스</option>
+          <option value="toptoon">탑툰</option>
           <option value="other">기타</option>
         </select>
       </div>
@@ -1003,21 +998,40 @@ const WEEKDAY_KEYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const FINISHED_KEY = 'finished';
 const DAY_LABELS = { mon: '월', tue: '화', wed: '수', thu: '목', fri: '금', sat: '토', sun: '일', finished: '완결' };
 
+// ── 플랫폼 설정 (새 플랫폼은 이 목록에만 추가하면 필터/렌더링에 자동 반영됨)
+const PLATFORM_KEYS = ['naver', 'kakao', 'lezhin', 'toptoon'];
+const PLATFORM_META = {
+  naver: {
+    label: '네이버', badgeLabel: '🟢 NAVER 웹툰', finishedBadgeLabel: '🟢 NAVER 완결 웹툰',
+    link: key => `https://comic.naver.com/webtoon?tab=${key}`, finishedLink: 'https://comic.naver.com/webtoon?tab=finish',
+  },
+  kakao: {
+    label: '카카오', badgeLabel: '🟡 KAKAO 웹툰', finishedBadgeLabel: '🟡 KAKAO 완결 웹툰',
+    link: () => 'https://webtoon.kakao.com/', finishedLink: 'https://webtoon.kakao.com/',
+  },
+  lezhin: {
+    label: '레진', badgeLabel: '🔴 레진코믹스', finishedBadgeLabel: '🔴 레진코믹스 완결',
+    link: () => 'https://www.lezhin.com/ko', finishedLink: 'https://www.lezhin.com/ko',
+  },
+  toptoon: {
+    label: '탑툰', badgeLabel: '🟣 탑툰', finishedBadgeLabel: '🟣 탑툰 완결',
+    link: () => 'https://www.toptoon.com/', finishedLink: 'https://www.toptoon.com/',
+  },
+};
+
 const todayIdx = (new Date().getDay() + 6) % 7;
 let selectedDay = todayIdx;
-let activePlatforms = { naver: true, kakao: false };
+let activePlatforms = { naver: true, kakao: false, lezhin: false, toptoon: false };
 let searchQuery = '';
 let dataLoadStatus = 'loading';
 let loadMessages = [];
 
-const dataStore = {
-  naver: emptyPlatformData(),
-  kakao: emptyPlatformData(),
-};
-
 function emptyPlatformData() {
   return { mon: [], tue: [], wed: [], thu: [], fri: [], sat: [], sun: [], finished: [] };
 }
+
+const dataStore = {};
+PLATFORM_KEYS.forEach(platform => { dataStore[platform] = emptyPlatformData(); });
 
 const DATA_FILES = [
   { platform: 'naver', section: 'weekday', file: 'naver-webtoon.json' },
@@ -1030,6 +1044,10 @@ const DATA_FILES = [
   { platform: 'kakao', section: 'weekday', day: 'sat', file: 'kakao-webtoon-sat.json' },
   { platform: 'kakao', section: 'weekday', day: 'sun', file: 'kakao-webtoon-sun.json' },
   { platform: 'kakao', section: 'finished', file: 'kakao-webtoon-finished.json' },
+  { platform: 'lezhin', section: 'weekday', file: 'lezhin-webtoon.json', optional: true },
+  { platform: 'lezhin', section: 'finished', file: 'lezhin-webtoon-finished.json', optional: true },
+  { platform: 'toptoon', section: 'weekday', file: 'toptoon-webtoon.json', optional: true },
+  { platform: 'toptoon', section: 'finished', file: 'toptoon-webtoon-finished.json', optional: true },
 ];
 
 // ── 사용자 커스텀 데이터 (localStorage 저장)
@@ -1061,13 +1079,14 @@ function normalizeItem(item, platform, sectionOrDay, index = 0) {
 
   const isFinished = sectionOrDay === FINISHED_KEY || item.status === 'finished' || item.section === FINISHED_KEY;
   const id = getItemId(item, platform, sectionOrDay, index);
+  const platformLabel = PLATFORM_META[platform]?.label || platform;
 
   return {
     ...item,
     title,
     url,
     thumb,
-    author: item.author || (isFinished ? `${platform === 'naver' ? '네이버' : '카카오'} 완결` : `${platform === 'naver' ? '네이버' : '카카오'} 웹툰`),
+    author: item.author || (isFinished ? `${platformLabel} 완결` : `${platformLabel} 웹툰`),
     genre: item.genre || (isFinished ? '완결' : (item.dayLabel ? `${item.dayLabel}요일` : '웹툰')),
     emoji: item.emoji || (isFinished ? '✅' : '📚'),
     platform,
@@ -1111,7 +1130,7 @@ function extractListsFromRaw(raw, platformHint, dayHint, sectionHint) {
 
   // 추천 통합 구조: { platforms: { naver: { weekday:{mon:[]}, finished:[] } } }
   if (raw.platforms) {
-    for (const platform of ['naver', 'kakao']) {
+    for (const platform of PLATFORM_KEYS) {
       const p = raw.platforms[platform];
       if (!p) continue;
       for (const day of WEEKDAY_KEYS) add(platform, day, p.weekday?.[day] || p[day]);
@@ -1119,8 +1138,8 @@ function extractListsFromRaw(raw, platformHint, dayHint, sectionHint) {
     }
   }
 
-  // 일반 구조: { naver:{mon:[], finished:[]} }, { kakao:{tue:[]} }
-  for (const platform of ['naver', 'kakao']) {
+  // 일반 구조: { naver:{mon:[], finished:[]} }, { kakao:{tue:[]} }, { lezhin:{...} }, { toptoon:{...} }
+  for (const platform of PLATFORM_KEYS) {
     const p = raw[platform];
     if (!p) continue;
     for (const day of WEEKDAY_KEYS) add(platform, day, p[day] || p.weekday?.[day]);
@@ -1422,12 +1441,6 @@ function selectDay(idx) {
   selectedDay = idx;
   renderDayTabs();
   renderContent();
-  // 선택된 탭이 보이도록 스크롤 (모바일)
-  const tabs = document.getElementById('dayTabs');
-  const activeTab = tabs && tabs.querySelector('.day-tab.active');
-  if (activeTab) {
-    activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-  }
 }
 
 function togglePlatform(plat, btn) {
@@ -1628,10 +1641,11 @@ function withRenderMeta(list, platform, key) {
 function collectAllVisibleItems() {
   const items = [];
   for (const day of DAY_KEYS) {
-    if (activePlatforms.naver) items.push(...withRenderMeta(applySavedChanges(dataStore.naver[day] || [], 'naver', day), 'naver', day));
-    if (activePlatforms.kakao) items.push(...withRenderMeta(applySavedChanges(dataStore.kakao[day] || [], 'kakao', day), 'kakao', day));
-    if (activePlatforms.naver) items.push(...withRenderMeta(customList('naver', day), 'naver', day));
-    if (activePlatforms.kakao) items.push(...withRenderMeta(customList('kakao', day), 'kakao', day));
+    for (const platform of PLATFORM_KEYS) {
+      if (!activePlatforms[platform]) continue;
+      items.push(...withRenderMeta(applySavedChanges(dataStore[platform][day] || [], platform, day), platform, day));
+      items.push(...withRenderMeta(customList(platform, day), platform, day));
+    }
     items.push(...withRenderMeta(customList('other', day), 'other', day));
   }
   return items;
@@ -1695,34 +1709,27 @@ function renderContent() {
   const main = document.getElementById('main');
   const dayName = DAYS[selectedDay];
 
-  const naverRaw = activePlatforms.naver ? [
-    ...applySavedChanges(dataStore.naver[key] || [], 'naver', key),
-    ...customList('naver', key)
-  ] : [];
-  const kakaoRaw = activePlatforms.kakao ? [
-    ...applySavedChanges(dataStore.kakao[key] || [], 'kakao', key),
-    ...customList('kakao', key)
-  ] : [];
+  const platformRaw = PLATFORM_KEYS.map(platform => ({
+    platform,
+    raw: activePlatforms[platform] ? [
+      ...applySavedChanges(dataStore[platform][key] || [], platform, key),
+      ...customList(platform, key)
+    ] : [],
+  }));
   const otherRaw = customList('other', key);
-  const totalBeforeSearch = naverRaw.length + kakaoRaw.length + otherRaw.length;
+  const totalBeforeSearch = platformRaw.reduce((sum, p) => sum + p.raw.length, 0) + otherRaw.length;
 
-  const naverAll = filterBySearch(naverRaw);
-  const kakaoAll = filterBySearch(kakaoRaw);
+  const platformAll = platformRaw.map(({ platform, raw }) => ({ platform, all: filterBySearch(raw) }));
   const otherAll = filterBySearch(otherRaw);
 
-  const naverSplit = splitFavorites(naverAll, 'naver', key);
-  const kakaoSplit = splitFavorites(kakaoAll, 'kakao', key);
+  const platformSplit = platformAll.map(({ platform, all }) => ({ platform, ...splitFavorites(all, platform, key) }));
   const otherSplit = splitFavorites(otherAll, 'other', key);
   const favoriteList = favoriteFirst([
-    ...naverSplit.favorites,
-    ...kakaoSplit.favorites,
+    ...platformSplit.flatMap(p => p.favorites),
     ...otherSplit.favorites
   ], 'favorite', key);
-  const naverList = naverSplit.normal;
-  const kakaoList = kakaoSplit.normal;
-  const otherList = otherSplit.normal;
 
-  const total = naverAll.length + kakaoAll.length + otherAll.length;
+  const total = platformAll.reduce((sum, p) => sum + p.all.length, 0) + otherAll.length;
   updateSearchNote(totalBeforeSearch, total, `${dayName}요일`);
 
   let html = `
@@ -1739,26 +1746,27 @@ function renderContent() {
   }
 
   if (favoriteList.length > 0) html += renderPlatformSection('favorite', '⭐ 즐겨찾기', '', favoriteList, key);
-  if (naverList.length > 0) html += renderPlatformSection('naver', '🟢 NAVER 웹툰', `https://comic.naver.com/webtoon?tab=${key}`, favoriteFirst(naverList, 'naver', key), key);
-  if (kakaoList.length > 0) html += renderPlatformSection('kakao', '🟡 KAKAO 웹툰', 'https://webtoon.kakao.com/', favoriteFirst(kakaoList, 'kakao', key), key);
-  if (otherList.length > 0) html += renderPlatformSection('other', '🔵 기타', '', favoriteFirst(otherList, 'other', key), key);
+  for (const { platform, normal } of platformSplit) {
+    if (normal.length === 0) continue;
+    const meta = PLATFORM_META[platform];
+    html += renderPlatformSection(platform, meta.badgeLabel, meta.link(key), favoriteFirst(normal, platform, key), key);
+  }
+  if (otherSplit.normal.length > 0) html += renderPlatformSection('other', '🔵 기타', '', favoriteFirst(otherSplit.normal, 'other', key), key);
 
   main.innerHTML = html;
 }
 
 function renderFinishedContent() {
   const main = document.getElementById('main');
-  const naverRaw = activePlatforms.naver ? applySavedChanges(dataStore.naver.finished || [], 'naver', FINISHED_KEY) : [];
-  const kakaoRaw = activePlatforms.kakao ? applySavedChanges(dataStore.kakao.finished || [], 'kakao', FINISHED_KEY) : [];
-  const totalBeforeSearch = naverRaw.length + kakaoRaw.length;
-  const naverAll = filterBySearch(naverRaw);
-  const kakaoAll = filterBySearch(kakaoRaw);
-  const naverSplit = splitFavorites(naverAll, 'naver', FINISHED_KEY);
-  const kakaoSplit = splitFavorites(kakaoAll, 'kakao', FINISHED_KEY);
-  const favoriteList = favoriteFirst([...naverSplit.favorites, ...kakaoSplit.favorites], 'favorite', FINISHED_KEY);
-  const naverList = naverSplit.normal;
-  const kakaoList = kakaoSplit.normal;
-  const total = naverAll.length + kakaoAll.length;
+  const platformRaw = PLATFORM_KEYS.map(platform => ({
+    platform,
+    all: filterBySearch(activePlatforms[platform] ? applySavedChanges(dataStore[platform].finished || [], platform, FINISHED_KEY) : []),
+  }));
+  const totalBeforeSearch = PLATFORM_KEYS.reduce((sum, platform) => sum + (activePlatforms[platform] ? (dataStore[platform].finished || []).length : 0), 0);
+
+  const platformSplit = platformRaw.map(({ platform, all }) => ({ platform, ...splitFavorites(all, platform, FINISHED_KEY) }));
+  const favoriteList = favoriteFirst(platformSplit.flatMap(p => p.favorites), 'favorite', FINISHED_KEY);
+  const total = platformRaw.reduce((sum, p) => sum + p.all.length, 0);
   updateSearchNote(totalBeforeSearch, total, '완결');
 
   let html = `
@@ -1775,15 +1783,18 @@ function renderFinishedContent() {
   }
 
   if (favoriteList.length > 0) html += renderPlatformSection('favorite', '⭐ 즐겨찾기', '', favoriteList, FINISHED_KEY);
-  if (naverList.length > 0) html += renderPlatformSection('naver', '🟢 NAVER 완결 웹툰', 'https://comic.naver.com/webtoon?tab=finish', favoriteFirst(naverList, 'naver', FINISHED_KEY), FINISHED_KEY);
-  if (kakaoList.length > 0) html += renderPlatformSection('kakao', '🟡 KAKAO 완결 웹툰', 'https://webtoon.kakao.com/', favoriteFirst(kakaoList, 'kakao', FINISHED_KEY), FINISHED_KEY);
+  for (const { platform, normal } of platformSplit) {
+    if (normal.length === 0) continue;
+    const meta = PLATFORM_META[platform];
+    html += renderPlatformSection(platform, meta.finishedBadgeLabel, meta.finishedLink, favoriteFirst(normal, platform, FINISHED_KEY), FINISHED_KEY);
+  }
 
   main.innerHTML = html;
 }
 
 function renderPlatformSection(platform, label, link, list, key) {
   const linkHtml = link ? `<a href="${link}" target="_blank" class="platform-link">전체 보기 →</a>` : '';
-  const badgeClass = platform === 'naver' ? 'naver' : platform === 'kakao' ? 'kakao' : platform === 'favorite' ? 'favorite' : '';
+  const badgeClass = PLATFORM_KEYS.includes(platform) ? platform : (platform === 'favorite' ? 'favorite' : '');
   const badgeStyle = (platform === 'other' || platform === 'search') ? 'style="background:rgba(108,99,255,0.12);color:#9b8fff;border:1px solid rgba(108,99,255,0.25);"' : '';
   const sectionClass = platform === 'favorite' ? 'platform-section favorite-section fade-in' : 'platform-section fade-in';
   return `
@@ -1899,64 +1910,6 @@ function showToast(msg) {
 
 renderDayTabs();
 loadAllJsonData();
-
-// ── 모바일 스와이프로 요일 변경
-(function() {
-  let touchStartX = 0;
-  let touchStartY = 0;
-  let touchStartTime = 0;
-  const SWIPE_THRESHOLD = 50;   // 최소 이동 거리 (px)
-  const ANGLE_THRESHOLD = 35;   // 수평 판단 각도 (도)
-  const TIME_LIMIT = 400;       // 최대 제스처 시간 (ms)
-
-  function isMobile() {
-    return window.matchMedia('(max-width: 900px)').matches;
-  }
-
-  document.addEventListener('touchstart', function(e) {
-    // 모달이 열려 있으면 무시
-    const modals = ['modal', 'del-modal', 'edit-modal'];
-    if (modals.some(id => document.getElementById(id)?.style.display !== 'none')) return;
-
-    const t = e.touches[0];
-    touchStartX = t.clientX;
-    touchStartY = t.clientY;
-    touchStartTime = Date.now();
-  }, { passive: true });
-
-  document.addEventListener('touchend', function(e) {
-    if (!isMobile()) return;
-
-    // 모달이 열려 있으면 무시
-    const modals = ['modal', 'del-modal', 'edit-modal'];
-    if (modals.some(id => document.getElementById(id)?.style.display !== 'none')) return;
-
-    const t = e.changedTouches[0];
-    const dx = t.clientX - touchStartX;
-    const dy = t.clientY - touchStartY;
-    const dt = Date.now() - touchStartTime;
-
-    if (dt > TIME_LIMIT) return;
-    if (Math.abs(dx) < SWIPE_THRESHOLD) return;
-
-    // 수평 스와이프인지 각도 확인
-    const angle = Math.abs(Math.atan2(Math.abs(dy), Math.abs(dx)) * 180 / Math.PI);
-    if (angle > ANGLE_THRESHOLD) return;
-
-    // 검색 입력 중이면 무시
-    if (document.activeElement && document.activeElement.id === 'searchInput') return;
-
-    if (dx < 0) {
-      // 왼쪽 스와이프 → 다음 요일
-      const next = (selectedDay + 1) % DAYS.length;
-      selectDay(next);
-    } else {
-      // 오른쪽 스와이프 → 이전 요일
-      const prev = (selectedDay - 1 + DAYS.length) % DAYS.length;
-      selectDay(prev);
-    }
-  }, { passive: true });
-})();
 </script>
 </body>
 </html>
