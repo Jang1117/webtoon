@@ -1740,7 +1740,7 @@ function renderContent() {
   `;
 
   if (total === 0) {
-    html += `<div class="empty-state fade-in"><div class="icon">😶</div><p>${searchQuery.trim() ? '검색 결과가 없습니다.' : '표시할 웹툰이 없습니다. JSON 파일명과 구조를 확인해주세요.'}</p></div>`;
+    html += `<div class="empty-state fade-in"><div class="icon">😶</div><p>${searchQuery.trim() ? '검색 결과가 없습니다.' : '표시할 웹툰이 없습니다.'}</p></div>`;
     main.innerHTML = html;
     return;
   }
