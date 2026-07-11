@@ -1,0 +1,502 @@
+{
+  "lezhin": {
+    "mon": [
+      {
+        "title": "바퀴멘터리",
+        "url": "https://www.lezhin.com/ko/comic/baquimentary",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6185833387393024/images/tall.jpg?updated=1767835110625&width=420",
+        "platform": "lezhin",
+        "contentId": "6185833387393024",
+        "day": "mon",
+        "dayLabel": "월",
+        "author": "박바퀴",
+        "genre": "일상"
+      },
+      {
+        "title": "마법사와 춤을",
+        "url": "https://www.lezhin.com/ko/comic/dance_with_wizard",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6005406548426752/images/tall.jpg?updated=1776996165396&width=420",
+        "platform": "lezhin",
+        "contentId": "6005406548426752",
+        "day": "mon",
+        "dayLabel": "월",
+        "author": "꽉",
+        "genre": "판타지"
+      },
+      {
+        "title": "연애편지 대신 써드릴까요?",
+        "url": "https://www.lezhin.com/ko/comic/write_loveletter_instead",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011748599270451/images/tall.jpg?updated=1749965101650&width=420",
+        "platform": "lezhin",
+        "contentId": "7011748599270451",
+        "day": "mon",
+        "dayLabel": "월",
+        "author": "닉업, 유테",
+        "genre": "BL"
+      }
+    ],
+    "tue": [
+      {
+        "title": "바퀴멘터리",
+        "url": "https://www.lezhin.com/ko/comic/baquimentary",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6185833387393024/images/tall.jpg?updated=1767835110625&width=420",
+        "platform": "lezhin",
+        "contentId": "6185833387393024",
+        "day": "tue",
+        "dayLabel": "화",
+        "author": "박바퀴",
+        "genre": "일상"
+      },
+      {
+        "title": "괴기 클럽",
+        "url": "https://www.lezhin.com/ko/comic/mysteryclub",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011779236002657/images/tall.jpg?updated=1780896873513&width=420",
+        "platform": "lezhin",
+        "contentId": "7011779236002657",
+        "day": "tue",
+        "dayLabel": "화",
+        "author": "장혁준",
+        "genre": "mystery"
+      },
+      {
+        "title": "내가 네 운명의 가이드는 아니지만 [개정판]",
+        "url": "https://www.lezhin.com/ko/comic/not_your_fate_all",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011750840240248/images/tall.jpg?updated=1755162542307&width=420",
+        "platform": "lezhin",
+        "contentId": "7011750840240248",
+        "day": "tue",
+        "dayLabel": "화",
+        "author": ".Dd., 누룽지파티초대장",
+        "genre": "BL"
+      },
+      {
+        "title": "이게 무슨 일이야? [개정판]",
+        "url": "https://www.lezhin.com/ko/comic/whatisgoingon_15",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6736931064053760/images/tall.jpg?updated=1762862559451&width=420",
+        "platform": "lezhin",
+        "contentId": "6736931064053760",
+        "day": "tue",
+        "dayLabel": "화",
+        "author": "민국23",
+        "genre": "드라마"
+      },
+      {
+        "title": "나의 수하[개정판]",
+        "url": "https://www.lezhin.com/ko/comic/my_suha_15",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6234227991969792/images/tall.jpg?updated=1777012260317&width=420",
+        "platform": "lezhin",
+        "contentId": "6234227991969792",
+        "day": "tue",
+        "dayLabel": "화",
+        "author": "차현",
+        "genre": "BL"
+      },
+      {
+        "title": "악마의 유혹 [개정판]",
+        "url": "https://www.lezhin.com/ko/comic/vemdak_15",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/4882246426361856/images/tall.jpg?updated=1736215562528&width=420",
+        "platform": "lezhin",
+        "contentId": "4882246426361856",
+        "day": "tue",
+        "dayLabel": "화",
+        "author": "윤",
+        "genre": "BL"
+      }
+    ],
+    "wed": [
+      {
+        "title": "이웃집 길드원",
+        "url": "https://www.lezhin.com/ko/comic/neighbor_bf",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6313950063689728/images/tall.jpg?updated=1762861923172&width=420",
+        "platform": "lezhin",
+        "contentId": "6313950063689728",
+        "day": "wed",
+        "dayLabel": "수",
+        "author": "ANGELA, 비작, 허니트랩",
+        "genre": "BL"
+      },
+      {
+        "title": "바퀴멘터리",
+        "url": "https://www.lezhin.com/ko/comic/baquimentary",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6185833387393024/images/tall.jpg?updated=1767835110625&width=420",
+        "platform": "lezhin",
+        "contentId": "6185833387393024",
+        "day": "wed",
+        "dayLabel": "수",
+        "author": "박바퀴",
+        "genre": "일상"
+      },
+      {
+        "title": "괴기 클럽",
+        "url": "https://www.lezhin.com/ko/comic/mysteryclub",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011779236002657/images/tall.jpg?updated=1780896873513&width=420",
+        "platform": "lezhin",
+        "contentId": "7011779236002657",
+        "day": "wed",
+        "dayLabel": "수",
+        "author": "장혁준",
+        "genre": "mystery"
+      },
+      {
+        "title": "곰포만화",
+        "url": "https://www.lezhin.com/ko/comic/mystery_story",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011771415760002/images/tall.jpg?updated=1777297219290&width=420",
+        "platform": "lezhin",
+        "contentId": "7011771415760002",
+        "day": "wed",
+        "dayLabel": "수",
+        "author": "곰포",
+        "genre": "mystery"
+      },
+      {
+        "title": "마이크 없이도 들려 [개정판]",
+        "url": "https://www.lezhin.com/ko/comic/volume_15_2",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/5951472391618560/images/tall.jpg?updated=1746585357265&width=420",
+        "platform": "lezhin",
+        "contentId": "5951472391618560",
+        "day": "wed",
+        "dayLabel": "수",
+        "author": "알버트, 양은지",
+        "genre": "BL"
+      },
+      {
+        "title": "주인의 사정[개정판]",
+        "url": "https://www.lezhin.com/ko/comic/jooin_15",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/5669970438848512/images/tall.jpg?updated=1779272206584&width=420",
+        "platform": "lezhin",
+        "contentId": "5669970438848512",
+        "day": "wed",
+        "dayLabel": "수",
+        "author": "찐밤, WAJE",
+        "genre": "BL"
+      },
+      {
+        "title": "살맛 : 전생에 나라를 구했습니다[개정판]",
+        "url": "https://www.lezhin.com/ko/comic/salmat_15",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/5420909429325824/images/tall.jpg?updated=1769160048691&width=420",
+        "platform": "lezhin",
+        "contentId": "5420909429325824",
+        "day": "wed",
+        "dayLabel": "수",
+        "author": "스튜디오 스텔라즈",
+        "genre": "드라마"
+      }
+    ],
+    "thu": [
+      {
+        "title": "매운맛 커플",
+        "url": "https://www.lezhin.com/ko/comic/hotcouple",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/5758960471965696/images/tall.jpg?updated=1771934851800&width=420",
+        "platform": "lezhin",
+        "contentId": "5758960471965696",
+        "day": "thu",
+        "dayLabel": "목",
+        "author": "깜지루",
+        "genre": "일상"
+      },
+      {
+        "title": "바퀴멘터리",
+        "url": "https://www.lezhin.com/ko/comic/baquimentary",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6185833387393024/images/tall.jpg?updated=1767835110625&width=420",
+        "platform": "lezhin",
+        "contentId": "6185833387393024",
+        "day": "thu",
+        "dayLabel": "목",
+        "author": "박바퀴",
+        "genre": "일상"
+      },
+      {
+        "title": "봄불은 여우불이어라",
+        "url": "https://www.lezhin.com/ko/comic/fox_fire",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011777373973626/images/tall.jpg?updated=1779272916234&width=420",
+        "platform": "lezhin",
+        "contentId": "7011777373973626",
+        "day": "thu",
+        "dayLabel": "목",
+        "author": "파다닭, 키다리스튜디오",
+        "genre": "로맨스"
+      },
+      {
+        "title": "발화",
+        "url": "https://www.lezhin.com/ko/comic/inflame",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6608868420026368/images/tall.jpg?updated=1759895870678&width=420",
+        "platform": "lezhin",
+        "contentId": "6608868420026368",
+        "day": "thu",
+        "dayLabel": "목",
+        "author": "영재영",
+        "genre": "드라마"
+      },
+      {
+        "title": "괴기 클럽",
+        "url": "https://www.lezhin.com/ko/comic/mysteryclub",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011779236002657/images/tall.jpg?updated=1780896873513&width=420",
+        "platform": "lezhin",
+        "contentId": "7011779236002657",
+        "day": "thu",
+        "dayLabel": "목",
+        "author": "장혁준",
+        "genre": "mystery"
+      },
+      {
+        "title": "곰포만화",
+        "url": "https://www.lezhin.com/ko/comic/mystery_story",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011771415760002/images/tall.jpg?updated=1777297219290&width=420",
+        "platform": "lezhin",
+        "contentId": "7011771415760002",
+        "day": "thu",
+        "dayLabel": "목",
+        "author": "곰포",
+        "genre": "mystery"
+      },
+      {
+        "title": "너를 찾는 파도 [개정판]",
+        "url": "https://www.lezhin.com/ko/comic/surge_15",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6329970682167296/images/tall.jpg?updated=1746585255268&width=420",
+        "platform": "lezhin",
+        "contentId": "6329970682167296",
+        "day": "thu",
+        "dayLabel": "목",
+        "author": "청연",
+        "genre": "BL"
+      },
+      {
+        "title": "삼천포로 빠지기 쉽습니다",
+        "url": "https://www.lezhin.com/ko/comic/3000po",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011773380901041/images/tall.jpg?updated=1775622699336&width=420",
+        "platform": "lezhin",
+        "contentId": "7011773380901041",
+        "day": "thu",
+        "dayLabel": "목",
+        "author": "한 명, 키다리스튜디오",
+        "genre": "BL"
+      }
+    ],
+    "fri": [
+      {
+        "title": "오류탐구영역",
+        "url": "https://www.lezhin.com/ko/comic/error_zone",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011737621132804/images/tall.jpg?updated=1776994518580&width=420",
+        "platform": "lezhin",
+        "contentId": "7011737621132804",
+        "day": "fri",
+        "dayLabel": "금",
+        "author": "사자, 진월, 망고곰",
+        "genre": "BL"
+      },
+      {
+        "title": "음지탐구보고서",
+        "url": "https://www.lezhin.com/ko/comic/shady_research_report",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/5596969058500608/images/tall.jpg?updated=1769663581631&width=420",
+        "platform": "lezhin",
+        "contentId": "5596969058500608",
+        "day": "fri",
+        "dayLabel": "금",
+        "author": "양말젤리",
+        "genre": "gag"
+      },
+      {
+        "title": "거북이는 잠자는 토끼를 지나칠 수 없어!",
+        "url": "https://www.lezhin.com/ko/comic/cantskiprabbit",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011777435659027/images/tall.jpg?updated=1779447896340&width=420",
+        "platform": "lezhin",
+        "contentId": "7011777435659027",
+        "day": "fri",
+        "dayLabel": "금",
+        "author": "MOSEI",
+        "genre": "판타지"
+      },
+      {
+        "title": "금요정의 금요극장",
+        "url": "https://www.lezhin.com/ko/comic/goldpixinema",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/5376382661361664/images/tall.jpg?updated=1759895859380&width=420",
+        "platform": "lezhin",
+        "contentId": "5376382661361664",
+        "day": "fri",
+        "dayLabel": "금",
+        "author": "금요정",
+        "genre": "gag"
+      },
+      {
+        "title": "바퀴멘터리",
+        "url": "https://www.lezhin.com/ko/comic/baquimentary",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6185833387393024/images/tall.jpg?updated=1767835110625&width=420",
+        "platform": "lezhin",
+        "contentId": "6185833387393024",
+        "day": "fri",
+        "dayLabel": "금",
+        "author": "박바퀴",
+        "genre": "일상"
+      },
+      {
+        "title": "씨앗 유치원 호떡반 친구들",
+        "url": "https://www.lezhin.com/ko/comic/seed_hotteok",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011778226127253/images/tall.jpg?updated=1778226131628&width=420",
+        "platform": "lezhin",
+        "contentId": "7011778226127253",
+        "day": "fri",
+        "dayLabel": "금",
+        "author": "이하늘",
+        "genre": "일상"
+      }
+    ],
+    "sat": [
+      {
+        "title": "킬러가 사랑에 빠졌을 때",
+        "url": "https://www.lezhin.com/ko/comic/killer",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6181022497832960/images/tall.jpg?updated=1777863133632&width=420",
+        "platform": "lezhin",
+        "contentId": "6181022497832960",
+        "day": "sat",
+        "dayLabel": "토",
+        "author": "에레세모",
+        "genre": "BL"
+      },
+      {
+        "title": "까마귀 기사",
+        "url": "https://www.lezhin.com/ko/comic/crowknight",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/5132794414170112/images/tall.jpg?updated=1757483007641&width=420",
+        "platform": "lezhin",
+        "contentId": "5132794414170112",
+        "day": "sat",
+        "dayLabel": "토",
+        "author": "govy",
+        "genre": "판타지"
+      },
+      {
+        "title": "게임은 살인이다",
+        "url": "https://www.lezhin.com/ko/comic/gamesal",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/4948172147064832/images/tall.jpg?updated=1757656336282&width=420",
+        "platform": "lezhin",
+        "contentId": "4948172147064832",
+        "day": "sat",
+        "dayLabel": "토",
+        "author": "우왕이, 핫핑크",
+        "genre": "판타지"
+      },
+      {
+        "title": "이 무슨 대자연인가",
+        "url": "https://www.lezhin.com/ko/comic/mothernature",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6179963773714432/images/tall.jpg?updated=1763451757522&width=420",
+        "platform": "lezhin",
+        "contentId": "6179963773714432",
+        "day": "sat",
+        "dayLabel": "토",
+        "author": "상덕이",
+        "genre": "gag"
+      },
+      {
+        "title": "불멸의 날들",
+        "url": "https://www.lezhin.com/ko/comic/ImmortalDays",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/5308438415671296/images/tall.jpg?updated=1776994538655&width=420",
+        "platform": "lezhin",
+        "contentId": "5308438415671296",
+        "day": "sat",
+        "dayLabel": "토",
+        "author": "허긴개",
+        "genre": "액션"
+      },
+      {
+        "title": "안개 바다 위의 샤베트",
+        "url": "https://www.lezhin.com/ko/comic/shabetsea",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011770946139370/images/tall.jpg?updated=1775528842907&width=420",
+        "platform": "lezhin",
+        "contentId": "7011770946139370",
+        "day": "sat",
+        "dayLabel": "토",
+        "author": "뼈와피와살, 돈곰, 키다리스튜디오",
+        "genre": "GL"
+      },
+      {
+        "title": "옆자리 짝꿍의 비밀",
+        "url": "https://www.lezhin.com/ko/comic/secretofjjak",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6127795410632704/images/tall.jpg?updated=1736747427718&width=420",
+        "platform": "lezhin",
+        "contentId": "6127795410632704",
+        "day": "sat",
+        "dayLabel": "토",
+        "author": "채군",
+        "genre": "school"
+      },
+      {
+        "title": "남보다 못한 사이 [개정판]",
+        "url": "https://www.lezhin.com/ko/comic/old_picture_15",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011744182538244/images/tall.jpg?updated=1761546584191&width=420",
+        "platform": "lezhin",
+        "contentId": "7011744182538244",
+        "day": "sat",
+        "dayLabel": "토",
+        "author": "여로, 사금",
+        "genre": "BL"
+      },
+      {
+        "title": "꽃은 꽃으로, 잎은 잎으로",
+        "url": "https://www.lezhin.com/ko/comic/flower_leaf",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/5231277554073600/images/tall.jpg?updated=1774485954740&width=420",
+        "platform": "lezhin",
+        "contentId": "5231277554073600",
+        "day": "sat",
+        "dayLabel": "토",
+        "author": "골지, 해표, 우지혜",
+        "genre": "로맨스"
+      },
+      {
+        "title": "이세계 키잡마녀",
+        "url": "https://www.lezhin.com/ko/comic/witch",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/5197616999366656/images/tall.jpg?updated=1761617293537&width=420",
+        "platform": "lezhin",
+        "contentId": "5197616999366656",
+        "day": "sat",
+        "dayLabel": "토",
+        "author": "판중, 연선생",
+        "genre": "판타지"
+      }
+    ],
+    "sun": [
+      {
+        "title": "남고 소년",
+        "url": "https://www.lezhin.com/ko/comic/highschoolboy",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/5082862571421696/images/tall.jpg?updated=1770011250131&width=420",
+        "platform": "lezhin",
+        "contentId": "5082862571421696",
+        "day": "sun",
+        "dayLabel": "일",
+        "author": "박지",
+        "genre": "school"
+      },
+      {
+        "title": "부랄친구",
+        "url": "https://www.lezhin.com/ko/comic/bff",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/5474379383439360/images/tall.jpg?updated=1771298658692&width=420",
+        "platform": "lezhin",
+        "contentId": "5474379383439360",
+        "day": "sun",
+        "dayLabel": "일",
+        "author": "한라감귤",
+        "genre": "gag"
+      },
+      {
+        "title": "하는 중전 [개정판]",
+        "url": "https://www.lezhin.com/ko/comic/ha_is_the_queen_15",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/7011732964492487/images/tall.jpg?updated=1761295208319&width=420",
+        "platform": "lezhin",
+        "contentId": "7011732964492487",
+        "day": "sun",
+        "dayLabel": "일",
+        "author": "초야, 산홍",
+        "genre": "로맨스"
+      },
+      {
+        "title": "백만원의 로맨스 [개정판]",
+        "url": "https://www.lezhin.com/ko/comic/moneyromance_15",
+        "thumb": "https://ccdn.lezhin.com/v2/comics/6564286708252672/images/tall.jpg?updated=1777273520628&width=420",
+        "platform": "lezhin",
+        "contentId": "6564286708252672",
+        "day": "sun",
+        "dayLabel": "일",
+        "author": "달현지",
+        "genre": "BL"
+      }
+    ]
+  }
+}
