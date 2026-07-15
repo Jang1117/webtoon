@@ -1025,6 +1025,33 @@ let activePlatforms = { naver: true, kakao: false, lezhin: false, toptoon: false
 let searchQuery = '';
 let dataLoadStatus = 'loading';
 let loadMessages = [];
+let lazyImageObserver = null;
+
+// 화면에 보이는 카드 + 아래로 약 2페이지(뷰포트 2배) 분량의 썸네일만 미리 불러오고,
+// 나머지는 스크롤해서 가까워질 때 그때그때 불러옵니다.
+function observeLazyThumbs() {
+  if (lazyImageObserver) lazyImageObserver.disconnect();
+  const margin = Math.max(600, Math.round(window.innerHeight * 2));
+  lazyImageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const img = entry.target;
+      const src = img.getAttribute('data-src');
+      if (src) {
+        img.src = src;
+        img.removeAttribute('data-src');
+      }
+      observer.unobserve(img);
+    });
+  }, { rootMargin: `${margin}px 0px ${margin}px 0px`, threshold: 0.01 });
+
+  document.querySelectorAll('.lazy-thumb[data-src]').forEach(img => lazyImageObserver.observe(img));
+}
+
+function setMainHtml(html) {
+  document.getElementById('main').innerHTML = html;
+  observeLazyThumbs();
+}
 
 function emptyPlatformData() {
   return { mon: [], tue: [], wed: [], thu: [], fri: [], sat: [], sun: [], finished: [] };
@@ -1670,13 +1697,13 @@ function renderSearchContent() {
 
   if (total === 0) {
     html += `<div class="empty-state fade-in"><div class="icon">🔎</div><p>제목 검색 결과가 없습니다.</p></div>`;
-    main.innerHTML = html;
+    setMainHtml(html);
     return;
   }
 
   if (favoriteList.length > 0) html += renderPlatformSection('favorite', '⭐ 즐겨찾기 검색 결과', '', favoriteList, 'all');
   if (normalList.length > 0) html += renderPlatformSection('search', '🔎 전체 검색 결과', '', normalList, 'all');
-  main.innerHTML = html;
+  setMainHtml(html);
 }
 
 function applySavedChanges(list, platform, key) {
@@ -1740,8 +1767,8 @@ function renderContent() {
   `;
 
   if (total === 0) {
-    html += `<div class="empty-state fade-in"><div class="icon">😶</div><p>${searchQuery.trim() ? '검색 결과가 없습니다.' : '표시할 웹툰이 없습니다.'}</p></div>`;
-    main.innerHTML = html;
+    html += `<div class="empty-state fade-in"><div class="icon">😶</div><p>${searchQuery.trim() ? '검색 결과가 없습니다.' : '표시할 웹툰이 없습니다. JSON 파일명과 구조를 확인해주세요.'}</p></div>`;
+    setMainHtml(html);
     return;
   }
 
@@ -1753,7 +1780,7 @@ function renderContent() {
   }
   if (otherSplit.normal.length > 0) html += renderPlatformSection('other', '🔵 기타', '', favoriteFirst(otherSplit.normal, 'other', key), key);
 
-  main.innerHTML = html;
+  setMainHtml(html);
 }
 
 function renderFinishedContent() {
@@ -1778,7 +1805,7 @@ function renderFinishedContent() {
 
   if (total === 0) {
     html += `<div class="empty-state fade-in"><div class="icon">✅</div><p>${searchQuery.trim() ? '검색 결과가 없습니다.' : '완결 웹툰 JSON을 찾지 못했거나 데이터가 없습니다.'}</p></div>`;
-    main.innerHTML = html;
+    setMainHtml(html);
     return;
   }
 
@@ -1789,7 +1816,7 @@ function renderFinishedContent() {
     html += renderPlatformSection(platform, meta.finishedBadgeLabel, meta.finishedLink, favoriteFirst(normal, platform, FINISHED_KEY), FINISHED_KEY);
   }
 
-  main.innerHTML = html;
+  setMainHtml(html);
 }
 
 function renderPlatformSection(platform, label, link, list, key) {
@@ -1874,7 +1901,7 @@ function renderCard(w, platform, dayKey) {
   const customBadge = isCustom ? `<div class="card-custom-badge">내 추가</div>` : '';
 
   const thumbContent = thumb
-    ? `<img class="thumb-img" src="${thumb}" alt="${title}" referrerpolicy="no-referrer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="thumb-placeholder" style="display:none;">${emoji}</div>`
+    ? `<img class="thumb-img lazy-thumb" data-src="${thumb}" alt="${title}" referrerpolicy="no-referrer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" /><div class="thumb-placeholder" style="display:none;">${emoji}</div>`
     : `<div class="thumb-placeholder">${emoji}</div>`;
 
   return `
